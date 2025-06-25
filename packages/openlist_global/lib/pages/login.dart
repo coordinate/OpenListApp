@@ -3,13 +3,14 @@ import 'dart:async';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import '../config/config.dart';
-import '../config/global.dart';
-import '../l10n/generated/openlist_web_ui_localizations.dart';
+import 'package:openlist_global/config/config.dart';
+import 'package:openlist_global/config/global.dart';
+import '../l10n/generated/openlist_global_ui_localizations.dart';
 import '../utils/toast.dart';
 import 'package:tdesign_flutter/tdesign_flutter.dart';
 
-import 'homePage.dart';
+import 'package:openlist_web_ui/pages/homePage.dart' as openlist_web_ui;
+import 'package:openlist_native_ui/pages/homePage.dart' as openlist_native_ui;
 
 // 登录
 class LoginPage extends StatefulWidget {
@@ -21,7 +22,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  OpenListWebUiLocalizations? localizations;
+  OpenListGlobalUiLocalizations? localizations;
   List<Widget> _list = <Widget>[TDLoading(
     size: TDLoadingSize.small,
     icon: TDLoadingIcon.activity,
@@ -137,7 +138,9 @@ class _LoginPageState extends State<LoginPage> {
         Navigator.of(context).pop();
         // 跳转到主页
         Navigator.push(context, MaterialPageRoute(builder: (ctx) {
-          return HomePage();
+          // TODO select UI
+          return openlist_web_ui.HomePage();
+          // return openlist_native_ui.HomePage();
         }));
         return;
       } else {

@@ -2,16 +2,10 @@ import 'dart:async';
 import 'dart:io';
 import 'dart:isolate';
 
-import 'package:dio/dio.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:jaguar/jaguar.dart' as jaguar;
-import 'package:jaguar_flutter_asset/jaguar_flutter_asset.dart' as jaguar_flutter_asset;
 import 'package:openlist_background_service/openlist_background_service.dart'
 as openlist_background_service;
 import 'package:openlist_api/openlist_api.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 import 'config/config.dart';
 

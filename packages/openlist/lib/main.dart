@@ -1,9 +1,10 @@
 import 'dart:io';
 import 'dart:isolate';
 
-import 'package:openlist/init.dart';
+import 'package:openlist_global/init.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:openlist_global/l10n/generated/openlist_global_localizations.dart';
 import 'package:openlist_native_ui/l10n/generated/openlist_native_ui_localizations.dart';
 import 'package:openlist_web_ui/l10n/generated/openlist_web_ui_localizations.dart';
 import 'package:provider/provider.dart';
@@ -11,8 +12,7 @@ import 'package:window_manager/window_manager.dart';
 
 import 'l10n/generated/openlist_localizations.dart';
 import 'package:openlist_global/openlist_global.dart';
-import 'package:openlist_web_ui/pages/login.dart' as openlist_web_ui;
-import 'package:openlist_native_ui/pages/login.dart' as openlist_native_ui;
+import 'package:openlist_global/pages/login.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -46,6 +46,7 @@ class MyApp extends StatelessWidget {
         GlobalCupertinoLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         OpenListLocalizations.delegate,
+        OpenListGlobalLocalizations.delegate,
         OpenListWebUiLocalizations.delegate,
         OpenlistNativeUiLocalizations.delegate,
       ],
@@ -59,7 +60,7 @@ class MyApp extends StatelessWidget {
       // home: Platform.isMacOS?SplashImagePage():WebScreen(),
       // home: HomePage(),
       // home: (Platform.isIOS || Platform.isMacOS)?openlist_web_ui.LoginPage():openlist_native_ui.LoginPage(),
-      home: openlist_web_ui.LoginPage(),
+      home: LoginPage(),
       // home: openlist_native_ui.LoginPage(),
     );
   }

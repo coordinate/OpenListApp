@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../config/config.dart';
+import 'package:openlist_global/config/config.dart';
 import '../../l10n/generated/openlist_web_ui_localizations.dart';
 
 class SystemPage extends StatefulWidget {
@@ -26,7 +26,7 @@ class _SystemPageState extends State<SystemPage> {
   Widget build(BuildContext context) {
     final List _result = [];
     // AList固定信息
-    _result.add("OpenListAPIBaseUrl: $OpenListAPIBaseUrl");
+    _result.add("AListWebAPIBaseUrl: $AListWebAPIBaseUrl");
     _result.add("AListAPIBaseUrl: $AListAPIBaseUrl");
     _result.add("WebPageBaseUrl: $WebPageBaseUrl");
 

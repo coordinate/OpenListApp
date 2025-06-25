@@ -4,7 +4,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
-import '../../config/config.dart';
+import 'package:openlist_global/config/config.dart';
 import '../../l10n/generated/openlist_web_ui_localizations.dart';
 import '../../utils/toast.dart';
 import '../../widgets/goToUrl.dart';

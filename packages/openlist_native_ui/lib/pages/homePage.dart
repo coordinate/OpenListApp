@@ -1,8 +1,12 @@
 import 'dart:async';
 import 'dart:io';
 
+import 'package:dio/dio.dart';
+import 'package:openlist_global/init.dart';
 import 'package:openlist_native_ui/pages/storages/StoragesPage.dart';
-import 'package:openlist_native_ui/pages/tasks/TasksPage.dart';
+import 'package:openlist_background_service/openlist_background_service.dart'
+as openlist_background_service;
+import 'package:openlist_api/openlist_api.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:path_provider/path_provider.dart';
@@ -10,6 +14,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tdesign_flutter/tdesign_flutter.dart';
 
 import '../l10n/generated/openlist_native_ui_localizations.dart';
+import 'package:openlist_global/config/config.dart';
 import 'files/FileManagerPage.dart';
 import 'files/FilesWebPage.dart';
 import 'me/profilePage.dart';
@@ -48,15 +53,16 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
       case AppLifecycleState.resumed: //从后台切换前台，界面可见
         print("AppLifecycleState.resumed");
         // TODO
-        // waitHttpPong().then((ret) async {
-        //   if (ret == "restarted") {
-        //     Directory appDir = await  getApplicationDocumentsDirectory();
-        //     await setConfigData(appDir.path);
-        //     await initAList();
-        //     await startAList();
-        //   }
-        //   setState(() {});
-        // });
+        waitHttpPong().then((ret) async {
+          if (ret == "restarted") {
+            Directory appDir = await  getApplicationDocumentsDirectory();
+            var backgrounService = BackgrounService(AListWebAPIBaseUrl);
+            await backgrounService.setConfigData(appDir.path);
+            await backgrounService.initAList();
+            await backgrounService.startAList();
+          }
+          setState(() {});
+        });
         // showToast( "程序状态：${state.toString()}");
         if (_timer != null) {
           _timer!.cancel();
@@ -173,5 +179,36 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
 
   Future<void> _initSharedPreferences() async {
     prefs = await SharedPreferences.getInstance();
+  }
+}
+
+Future<String> waitHttpPong() async {
+  // 获取支持的驱动
+  // alive,restarted
+  String ret = "alive";
+  final dio = Dio(BaseOptions(
+      baseUrl: AListWebAPIBaseUrl));
+  String reqUri = "/ping";
+  while (true) {
+    try {
+      final response = await dio.getUri(Uri.parse(reqUri),options: Options(
+        sendTimeout:Duration(milliseconds: 100),
+        receiveTimeout:Duration(milliseconds: 100),));
+      if (response.statusCode == 200) {
+        //  登录成功
+        Map<String, dynamic> data = response.data;
+        print(data["data"]);
+        return ret;
+      } else {
+        //  登录失败
+        print("ping failed");
+        return ret;
+      }
+    } catch (e) {
+      //  登录失败
+      print(e.toString());
+      await initBackgroundService();
+      ret = "restarted";
+    }
   }
 }

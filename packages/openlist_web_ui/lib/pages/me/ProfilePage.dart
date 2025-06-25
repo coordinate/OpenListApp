@@ -9,7 +9,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tdesign_flutter/tdesign_flutter.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
-import '../../config/config.dart';
+import 'package:openlist_global/config/config.dart';
 import 'package:openlist_global/openlist_global.dart';
 import '../../widgets/goToUrl.dart';
 import '../common/appInfo.dart';

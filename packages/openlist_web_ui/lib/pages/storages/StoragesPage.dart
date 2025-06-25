@@ -1,4 +1,4 @@
-import 'package:openlist_web_ui/config/config.dart';
+import 'package:openlist_global/config/config.dart';
 import 'package:openlist_web_ui/pages/web/web.dart';
 import 'package:flutter/cupertino.dart';
 
