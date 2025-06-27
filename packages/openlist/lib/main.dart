@@ -1,5 +1,4 @@
 import 'dart:io';
-import 'dart:isolate';
 
 import 'package:openlist_global/init.dart';
 import 'package:flutter/material.dart';

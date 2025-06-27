@@ -16,8 +16,6 @@ dependencies:
   jaguar_flutter_asset: ^3.0.0
   shared_preferences: ^2.1.1
   intl: '>=0.19.0 <= 1.0.0'
-  openlist_background_service:
-    path: ../openlist_background_service
   openlist_global:
     path: ../openlist_global
   openlist_api:

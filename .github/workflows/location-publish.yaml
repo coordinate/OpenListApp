@@ -2,7 +2,7 @@ name: location publish
 
 on:
   push:
-    tags: ["location-v*"]
+    tags: ["publish-libs-v*"]
 
 jobs:
   publish:

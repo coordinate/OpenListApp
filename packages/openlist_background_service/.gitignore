@@ -30,4 +30,7 @@ migrate_working_dir/
 build/
 
 *.xcframework
+
 /linux/libs/libmobile.so
+/windows/libs/mobile.dll
+/android/libs/mobile.aar

@@ -4,8 +4,6 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:openlist_global/init.dart';
 import 'package:openlist_native_ui/pages/storages/StoragesPage.dart';
-import 'package:openlist_background_service/openlist_background_service.dart'
-as openlist_background_service;
 import 'package:openlist_api/openlist_api.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

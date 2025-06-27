@@ -7,7 +7,6 @@ class FeedbackPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final List _result = [];
     _result.add("1：加入QQ群(251227638)反馈");
-    _result.add("2. 关注云亿连的微信公众号<云亿连物联网>反馈");
 
     final tiles = _result.map(
       (pair) {
