@@ -201,7 +201,7 @@ jobs:
           latest: true
           fileName: 'mobile_amd64.dll'
           out-file-path: 'packages/openlist_background_service/windows/libs'
-      - run: mv packages/openlist_background_service/windows/libs/mobile_amd64.dll packages/openlist_background_service/windows/libs/mobile.dll
+      - run: ren packages/openlist_background_service/windows/libs/mobile_amd64.dll packages/openlist_background_service/windows/libs/mobile.dll
       - run: flutter pub get
       - run: flutter build windows --release
       - run: Compress-Archive -Path build\windows\x64\runner\Release -DestinationPath windows-release.zip
