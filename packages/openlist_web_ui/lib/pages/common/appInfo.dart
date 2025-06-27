@@ -5,9 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
 import 'package:openlist_global/config/config.dart';
-import '../../l10n/generated/openlist_web_ui_localizations.dart';
-import '../../utils/toast.dart';
-import '../../widgets/goToUrl.dart';
+import 'package:openlist_web_ui/l10n/generated/openlist_web_ui_localizations.dart';
+import 'package:openlist_web_ui/utils/toast.dart';
 
 class AppInfoPage extends StatefulWidget {
   AppInfoPage({required Key key}) : super(key: key);

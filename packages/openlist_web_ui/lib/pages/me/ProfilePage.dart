@@ -5,15 +5,13 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tdesign_flutter/tdesign_flutter.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 import 'package:openlist_global/config/config.dart';
 import 'package:openlist_global/openlist_global.dart';
-import '../../widgets/goToUrl.dart';
-import '../common/appInfo.dart';
-import '../common/system.dart';
+import 'package:openlist_web_ui/pages/common/appInfo.dart';
+import 'package:openlist_web_ui/pages/common/system.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});

@@ -6,12 +6,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:get/get.dart';
-import 'package:tdesign_flutter/tdesign_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 import 'package:openlist_global/config/config.dart';
-import '../../l10n/generated/openlist_web_ui_localizations.dart';
+import 'package:openlist_web_ui/l10n/generated/openlist_web_ui_localizations.dart';
 
 GlobalKey<FilesWebPageState> webGlobalKey = GlobalKey();
 

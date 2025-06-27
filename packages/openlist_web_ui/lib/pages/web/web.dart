@@ -9,7 +9,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 import 'package:openlist_global/config/global.dart';
-import '../../l10n/generated/openlist_web_ui_localizations.dart';
+import 'package:openlist_web_ui/l10n/generated/openlist_web_ui_localizations.dart';
 
 GlobalKey<WebScreenState> webGlobalKey = GlobalKey();
 
