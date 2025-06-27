@@ -170,7 +170,7 @@ jobs:
       - run: flutter pub get
       - run: flutter build macos --debug
       - run: mkdir -p build/dmg
-      - run: cp -R build/macos/Build/Products/Debug/云亿连.app build/dmg/云亿连.app
+      - run: cp -R build/macos/Build/Products/Debug/openlist.app build/dmg/openlist.app
       - run: ln -s /Applications  build/dmg
       - run: ls build/dmg
       # https://github.com/create-dmg/create-dmg.git
@@ -201,7 +201,7 @@ jobs:
           latest: true
           fileName: 'mobile_amd64.dll'
           out-file-path: 'packages/openlist_background_service/windows/libs'
-      - run: ren packages/openlist_background_service/windows/libs/mobile_amd64.dll packages/openlist_background_service/windows/libs/mobile.dll
+      - run: Rename-Item -Path "packages/openlist_background_service/windows/libs/mobile_amd64.dll" -NewName "mobile.dll"
       - run: flutter pub get
       - run: flutter build windows --release
       - run: Compress-Archive -Path build\windows\x64\runner\Release -DestinationPath windows-release.zip

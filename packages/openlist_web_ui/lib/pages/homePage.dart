@@ -10,8 +10,8 @@ import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tdesign_flutter/tdesign_flutter.dart';
 
-import 'files/FilesWebPage.dart';
-import 'me/profilePage.dart';
+import './files/FilesWebPage.dart';
+import './me/profilePage.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
