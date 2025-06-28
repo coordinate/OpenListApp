@@ -45,6 +45,7 @@ dev_dependencies:
   intl_utils: ^2.8.3
   build_runner:
   flutter_gen_runner:
+  msix: ^3.16.9
 
 flutter_gen:
   assets:
