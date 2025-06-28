@@ -13,14 +13,14 @@ import 'package:openlist_config/openlist_config.dart';
 import 'package:openlist_web_ui/pages/common/appInfo.dart';
 import 'package:openlist_web_ui/pages/common/system.dart';
 
-class ProfilePage extends StatefulWidget {
-  const ProfilePage({super.key});
+class WebProfilePage extends StatefulWidget {
+  const WebProfilePage({super.key});
 
   @override
-  _ProfilePageState createState() => _ProfilePageState();
+  _WebProfilePageState createState() => _WebProfilePageState();
 }
 
-class _ProfilePageState extends State<ProfilePage> {
+class _WebProfilePageState extends State<WebProfilePage> {
   String username = "";
   String useremail = "";
   String usermobile = "";

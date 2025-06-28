@@ -11,7 +11,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tdesign_flutter/tdesign_flutter.dart';
 
 import 'package:openlist_web_ui/pages/files/FilesWebPage.dart';
-import 'package:openlist_web_ui/pages/me/profilePage.dart';
+
+import 'me/ProfilePage.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -109,7 +110,7 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
         break;
       case 3:
         // return UserInfoPage();
-        return const ProfilePage();
+        return const WebProfilePage();
         break;
     }
     return Text("");

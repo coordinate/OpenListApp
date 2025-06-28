@@ -13,7 +13,8 @@ import 'package:tdesign_flutter/tdesign_flutter.dart';
 import 'package:openlist_native_ui/l10n/generated/openlist_native_ui_localizations.dart';
 import 'package:openlist_config/config/config.dart';
 import 'files/FileManagerPage.dart';
-import 'package:openlist_native_ui/pages/me/profilePage.dart';
+
+import 'me/ProfilePage.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -130,7 +131,7 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
         break;
       case 2:
         // return UserInfoPage();
-        return const ProfilePage();
+        return const NativeProfilePage();
         break;
     }
     return Text("");

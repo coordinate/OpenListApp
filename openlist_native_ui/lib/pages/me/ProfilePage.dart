@@ -9,14 +9,14 @@ import '../../l10n/generated/openlist_native_ui_localizations.dart';
 import 'package:openlist_config/openlist_config.dart';
 import '../common/appInfo.dart';
 
-class ProfilePage extends StatefulWidget {
-  const ProfilePage({super.key});
+class NativeProfilePage extends StatefulWidget {
+  const NativeProfilePage({super.key});
 
   @override
-  _ProfilePageState createState() => _ProfilePageState();
+  _NativeProfilePageState createState() => _NativeProfilePageState();
 }
 
-class _ProfilePageState extends State<ProfilePage> {
+class _NativeProfilePageState extends State<NativeProfilePage> {
   String username = "";
   String useremail = "";
   String usermobile = "";
