@@ -37,7 +37,7 @@ jobs:
           repository: 'OpenListApp/OpenListLib'
           latest: true
           fileName: 'mobile.aar'
-          out-file-path: 'packages/openlist_background_service/android/libs'
+          out-file-path: 'openlist_background_service/android/libs'
       - run: flutter pub get
       - run: flutter build apk --release
       - name: Release APK
@@ -101,8 +101,8 @@ jobs:
           repository: 'OpenListApp/OpenListLib'
           latest: true
           fileName: 'libmobile_amd64.so'
-          out-file-path: 'packages/openlist_background_service/linux/libs'
-      - run: mv packages/openlist_background_service/linux/libs/libmobile_amd64.so packages/openlist_background_service/linux/libs/libmobile.so
+          out-file-path: 'openlist_background_service/linux/libs'
+      - run: mv openlist_background_service/linux/libs/libmobile_amd64.so openlist_background_service/linux/libs/libmobile.so
       - name: Build linux release
         run: |
           flutter config --enable-linux-desktop
@@ -200,8 +200,8 @@ jobs:
           repository: 'OpenListApp/OpenListLib'
           latest: true
           fileName: 'mobile_amd64.dll'
-          out-file-path: 'packages/openlist_background_service/windows/libs'
-      - run: Rename-Item -Path "packages/openlist_background_service/windows/libs/mobile_amd64.dll" -NewName "mobile.dll"
+          out-file-path: 'openlist_background_service/windows/libs'
+      - run: Rename-Item -Path "openlist_background_service/windows/libs/mobile_amd64.dll" -NewName "mobile.dll"
       - run: flutter pub get
       - run: flutter build windows --release
       - run: Compress-Archive -Path build\windows\x64\runner\Release -DestinationPath windows-release.zip
@@ -252,8 +252,8 @@ jobs:
           repository: 'OpenListApp/OpenListLib'
           latest: true
           fileName: 'libmobile_amd64.so'
-          out-file-path: 'packages/openlist_background_service/linux/libs'
-      - run: mv packages/openlist_background_service/linux/libs/libmobile_amd64.so packages/openlist_background_service/linux/libs/libmobile.so
+          out-file-path: 'openlist_background_service/linux/libs'
+      - run: mv openlist_background_service/linux/libs/libmobile_amd64.so openlist_background_service/linux/libs/libmobile.so
       - name: Build Flutter linux version
         working-directory: ${{ github.workspace }}
         run: |
