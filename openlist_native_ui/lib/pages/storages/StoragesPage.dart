@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:tdesign_flutter/tdesign_flutter.dart';
 
-import '../../l10n/generated/openlist_native_ui_localizations.dart';
-import '../../utils/getDIO.dart';
-import '../../utils/toast.dart';
+import 'package:openlist_native_ui/l10n/generated/openlist_native_ui_localizations.dart';
+import 'package:openlist_native_ui/utils/getDIO.dart';
+import 'package:openlist_native_ui/utils/toast.dart';
 import 'AddStorage.dart';
 
 class StoragesPage extends StatefulWidget {

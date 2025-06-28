@@ -11,11 +11,10 @@ import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tdesign_flutter/tdesign_flutter.dart';
 
-import '../l10n/generated/openlist_native_ui_localizations.dart';
+import 'package:openlist_native_ui/l10n/generated/openlist_native_ui_localizations.dart';
 import 'package:openlist_global/config/config.dart';
 import 'files/FileManagerPage.dart';
-import 'files/FilesWebPage.dart';
-import 'me/profilePage.dart';
+import 'package:openlist_native_ui/pages/me/profilePage.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);

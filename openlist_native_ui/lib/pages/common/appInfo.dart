@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
 import 'package:openlist_global/config/config.dart';
-import '../../l10n/generated/openlist_native_ui_localizations.dart';
-import '../../utils/toast.dart';
+import 'package:openlist_native_ui/l10n/generated/openlist_native_ui_localizations.dart';
+import 'package:openlist_native_ui/utils/toast.dart';
 import '../../widgets/goToUrl.dart';
 
 class AppInfoPage extends StatefulWidget {
