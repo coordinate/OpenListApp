@@ -20,6 +20,8 @@ dependencies:
   intl: '>=0.19.0 <= 1.0.0'
   openlist_global:
     path: ./openlist_global
+  openlist_config:
+    path: ./openlist_config
   #  flutter_inappwebview: ^6.1.5
   get: ^4.7.2
   url_launcher: ^6.1.11

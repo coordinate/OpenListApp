@@ -3,8 +3,8 @@ import 'dart:async';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:openlist_global/config/config.dart';
-import 'package:openlist_global/config/global.dart';
+import 'package:openlist_config/config/config.dart';
+import 'package:openlist_config/config/global.dart';
 import '../l10n/generated/openlist_global_ui_localizations.dart';
 import '../utils/toast.dart';
 import 'package:tdesign_flutter/tdesign_flutter.dart';

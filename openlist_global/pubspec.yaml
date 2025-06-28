@@ -17,6 +17,8 @@ dependencies:
 #  openlist_api: ^1.0.0
   openlist_api:
     path: ../openlist_api
+  openlist_config:
+    path: ../openlist_config
   openlist_background_service:
     path: ../openlist_background_service
 #  openlist_background_service: ^0.0.1+1

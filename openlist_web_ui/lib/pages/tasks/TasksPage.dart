@@ -9,8 +9,8 @@ import 'package:tdesign_flutter/tdesign_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
-import 'package:openlist_global/config/config.dart';
-import 'package:openlist_global/config/global.dart';
+import 'package:openlist_config/config/config.dart';
+import 'package:openlist_config/config/global.dart';
 import 'package:openlist_web_ui/l10n/generated/openlist_web_ui_localizations.dart';
 
 GlobalKey<TasksPageState> webGlobalKey = GlobalKey();

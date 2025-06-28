@@ -1,8 +1,8 @@
 
-import 'package:openlist_global/config/global.dart';
+import 'package:openlist_config/config/global.dart';
 import 'package:dio/dio.dart';
 
-import 'package:openlist_global/config/config.dart';
+import 'package:openlist_config/config/config.dart';
 
 Dio getDIO(){
   final dio = Dio(BaseOptions(baseUrl: AListAPIBaseUrl, headers: {

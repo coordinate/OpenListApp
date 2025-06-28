@@ -6,7 +6,7 @@ import 'package:tdesign_flutter/tdesign_flutter.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 import '../../l10n/generated/openlist_native_ui_localizations.dart';
-import 'package:openlist_global/openlist_global.dart';
+import 'package:openlist_config/openlist_config.dart';
 import '../common/appInfo.dart';
 
 class ProfilePage extends StatefulWidget {

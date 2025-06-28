@@ -8,8 +8,8 @@ import 'package:provider/provider.dart';
 import 'package:tdesign_flutter/tdesign_flutter.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
-import 'package:openlist_global/config/config.dart';
-import 'package:openlist_global/openlist_global.dart';
+import 'package:openlist_config/config/config.dart';
+import 'package:openlist_config/openlist_config.dart';
 import 'package:openlist_web_ui/pages/common/appInfo.dart';
 import 'package:openlist_web_ui/pages/common/system.dart';
 

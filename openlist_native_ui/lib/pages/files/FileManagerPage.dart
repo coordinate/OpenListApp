@@ -5,7 +5,7 @@ import 'package:flutter_breadcrumb/flutter_breadcrumb.dart';
 import 'package:path/path.dart' as p;
 import 'package:tdesign_flutter/tdesign_flutter.dart';
 
-import 'package:openlist_global/config/config.dart';
+import 'package:openlist_config/config/config.dart';
 import 'package:openlist_native_ui/l10n/generated/openlist_native_ui_localizations.dart';
 import 'package:openlist_native_ui/utils/getDIO.dart';
 import 'package:openlist_native_ui/utils/toast.dart';

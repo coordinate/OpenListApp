@@ -2,7 +2,6 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:openlist_global/init.dart';
 import 'package:openlist_native_ui/pages/storages/StoragesPage.dart';
 import 'package:openlist_api/openlist_api.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +11,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tdesign_flutter/tdesign_flutter.dart';
 
 import 'package:openlist_native_ui/l10n/generated/openlist_native_ui_localizations.dart';
-import 'package:openlist_global/config/config.dart';
+import 'package:openlist_config/config/config.dart';
 import 'files/FileManagerPage.dart';
 import 'package:openlist_native_ui/pages/me/profilePage.dart';
 
@@ -204,7 +203,6 @@ Future<String> waitHttpPong() async {
     } catch (e) {
       //  登录失败
       print(e.toString());
-      await initBackgroundService();
       ret = "restarted";
     }
   }

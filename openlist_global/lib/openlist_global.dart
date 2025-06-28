@@ -1,1 +1,1 @@
-export 'model/custom_theme.dart';
+export 'init.dart';

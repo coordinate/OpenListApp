@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:openlist_global/config/config.dart';
+import 'package:openlist_config/config/config.dart';
 import 'package:openlist_native_ui/l10n/generated/openlist_native_ui_localizations.dart';
 
 class SystemPage extends StatefulWidget {

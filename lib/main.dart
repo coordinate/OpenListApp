@@ -10,7 +10,7 @@ import 'package:provider/provider.dart';
 import 'package:window_manager/window_manager.dart';
 
 import 'l10n/generated/openlist_localizations.dart';
-import 'package:openlist_global/openlist_global.dart';
+import 'package:openlist_config/model/custom_theme.dart';
 import 'package:openlist_global/pages/login.dart';
 
 Future<void> main() async {

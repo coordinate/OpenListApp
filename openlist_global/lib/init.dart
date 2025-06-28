@@ -7,7 +7,7 @@ as openlist_background_service;
 import 'package:openlist_api/openlist_api.dart';
 import 'package:path_provider/path_provider.dart';
 
-import 'config/config.dart';
+import 'package:openlist_config/config/config.dart';
 
 List<Map<String, bool>>? initList;
 // final APIBaseUrl = "http://localhost:15244";
