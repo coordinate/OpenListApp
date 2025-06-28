@@ -12,6 +12,6 @@
  * [openlist_api](/openlist_api)核心api封装
  * [openlist_background_service](/openlist_background_service)openlist(AList)库封装
  * [openlist_global](/openlist_global)全局共享代码
- * [openlist_global](/openlist_config)配置文件
+ * [openlist_config](/openlist_config)配置文件
  * [openlist_native_ui](/openlist_native_ui) 原生界面代码
  * [openlist_web_ui](/openlist_web_ui)web界面代码(目前默认使用)

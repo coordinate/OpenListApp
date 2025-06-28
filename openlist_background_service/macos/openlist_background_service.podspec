@@ -25,10 +25,13 @@ For OpenListApp mobile APP background service
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES' }
   s.swift_version = '5.0'
 
-  s.dependency 'OpenListMobile' , '0.0.2'
+#   s.dependency 'OpenListMobile' , '0.0.2'
 #   s.dependency 'AListMobile' , '~> 0.0.3'
 #   s.dependency 'AListMobile'
+  s.preserve_paths = 'OpenListMobile.xcframework/**/*'
+  s.xcconfig =  {'OTHER_LDFLAGS' => '-framework OpenListMobile','ENABLE_BITCODE' => 'NO'}
+  s.vendored_frameworks = 'OpenListMobile.xcframework'
+  s.libraries = "resolv.9", "resolv"
+
   s.static_framework = true
-
-
 end
