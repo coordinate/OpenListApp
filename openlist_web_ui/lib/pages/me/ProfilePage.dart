@@ -1,5 +1,7 @@
+import 'dart:io';
 import 'dart:math';
 
+import 'package:openlist_utils/permission.dart';
 import 'package:openlist_web_ui/pages/web/web.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -135,6 +137,19 @@ class _WebProfilePageState extends State<WebProfilePage> {
                       )));
             }),
       ];
+      if (Platform.isAndroid) {
+        _listTiles.add(
+          ListTile(
+            //第二个功能项
+            title: Text("请求存储权限(仅映射本机存储需要)"),
+            leading: Icon(Icons.sd_storage_outlined, color: Colors.red),
+            trailing: const Icon(Icons.arrow_right),
+            onTap: () {
+              requestStorage(context);
+            },
+          ),
+        );
+      }
     });
   }
 

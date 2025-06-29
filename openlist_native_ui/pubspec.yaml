@@ -20,6 +20,8 @@ dependencies:
     path: ../openlist_config
   openlist_api:
     path: ../openlist_api
+  openlist_utils:
+    path: ../openlist_utils
 #  openlist_background_service: ^0.0.1
 #  openlist_config: ^0.0.1
   #  flutter_inappwebview: ^6.1.5
