@@ -59,6 +59,7 @@ class MyApp extends StatelessWidget {
       // home: Platform.isMacOS?SplashImagePage():WebScreen(),
       // home: HomePage(),
       // home: (Platform.isIOS || Platform.isMacOS)?openlist_web_ui.LoginPage():openlist_native_ui.LoginPage(),
+      // TODO 插件Linux上不支持网页
       home: LoginPage(),
       // home: openlist_native_ui.LoginPage(),
     );

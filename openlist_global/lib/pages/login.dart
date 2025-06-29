@@ -1,5 +1,6 @@
 //这个模型是用来局域网或者远程操作casaOS的
 import 'dart:async';
+import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
@@ -139,8 +140,12 @@ class _LoginPageState extends State<LoginPage> {
         // 跳转到主页
         Navigator.push(context, MaterialPageRoute(builder: (ctx) {
           // TODO select UI
-          return openlist_web_ui.HomePage();
-          // return openlist_native_ui.HomePage();
+          if (Platform.isLinux) {
+           //  由于插件不支持Linux webview所以使用原生界面或者直接使用系统网页打开
+           return openlist_native_ui.HomePage();
+          } else {
+            return openlist_web_ui.HomePage();
+          }
         }));
         return;
       } else {

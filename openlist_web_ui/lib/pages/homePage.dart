@@ -94,6 +94,7 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
   Widget _buildBody(int index) {
     switch (index) {
       case 0:
+        // TODO 插件不支持Linux
         return StoragesPage(
           key: UniqueKey(),
         );
