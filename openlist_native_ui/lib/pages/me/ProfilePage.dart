@@ -91,6 +91,14 @@ class _NativeProfilePageState extends State<NativeProfilePage> {
   _initListTiles() {
     setState(() {
       _listTiles = <ListTile>[
+        ListTile(
+          //第一个功能项
+            title: Text("Open web in browser"),
+            leading: Icon(TDIcons.system_2, color: Colors.blue),
+            trailing: const Icon(Icons.arrow_right),
+            onTap: () {
+              launchUrlString(AListAPIBaseUrl);
+            }),
         // ListTile(
         //   //第二个功能项
         //     title: Text(OpenlistNativeUiLocalizations.of(context).system),

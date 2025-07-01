@@ -7,8 +7,8 @@ import 'package:tdesign_flutter/tdesign_flutter.dart';
 
 import 'package:openlist_config/config/config.dart';
 import 'package:openlist_native_ui/l10n/generated/openlist_native_ui_localizations.dart';
-import 'package:openlist_native_ui/utils/getDIO.dart';
-import 'package:openlist_native_ui/utils/toast.dart';
+import 'package:openlist_utils/getDIO.dart';
+import 'package:openlist_utils/toast.dart';
 import 'package:openlist_native_ui/widgets/goToUrl.dart';
 import 'package:openlist_native_ui/pages/common/videp_player.dart';
 import '../web/web.dart';

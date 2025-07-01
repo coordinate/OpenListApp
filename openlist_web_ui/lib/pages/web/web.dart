@@ -1,5 +1,7 @@
 import 'dart:developer';
 
+import 'package:openlist_api/openlist_api.dart';
+import 'package:openlist_config/config/config.dart';
 import 'package:openlist_web_ui/pages/common/appInfo.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -10,6 +12,7 @@ import 'package:url_launcher/url_launcher_string.dart';
 
 import 'package:openlist_config/config/global.dart';
 import 'package:openlist_web_ui/l10n/generated/openlist_web_ui_localizations.dart';
+import 'package:openlist_utils/init.dart';
 
 GlobalKey<WebScreenState> webGlobalKey = GlobalKey();
 
@@ -232,7 +235,8 @@ class WebScreenState extends State<WebScreen> {
               child: Text(OpenListWebUiLocalizations.of(context).modify),
               onPressed: () async {
                 // TODO
-                // setAdminPassword(passwordController.text);
+                var backgrounService = BackgrounService(AListWebAPIBaseUrl);
+                await backgrounService.setAdminPassword(passwordController.text);
                 Navigator.of(context).pop();
               },
             )

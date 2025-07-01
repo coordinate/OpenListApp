@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:tdesign_flutter/tdesign_flutter.dart';
 
 import 'package:openlist_native_ui/l10n/generated/openlist_native_ui_localizations.dart';
-import 'package:openlist_native_ui/utils/getDIO.dart';
-import 'package:openlist_native_ui/utils/toast.dart';
+import 'package:openlist_utils/getDIO.dart';
+import 'package:openlist_utils/toast.dart';
 
 class AddStorageWidget extends StatefulWidget {
   const AddStorageWidget({super.key});

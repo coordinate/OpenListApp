@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:openlist_global/init.dart';
+import 'package:openlist_utils/init.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:openlist_global/l10n/generated/openlist_global_localizations.dart';

@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:openlist_config/config/config.dart';
 import 'package:openlist_config/config/global.dart';
 import '../l10n/generated/openlist_global_ui_localizations.dart';
-import '../utils/toast.dart';
+import 'package:openlist_utils/toast.dart';
 import 'package:tdesign_flutter/tdesign_flutter.dart';
 
 import 'package:openlist_web_ui/pages/homePage.dart' as openlist_web_ui;
@@ -140,6 +140,7 @@ class _LoginPageState extends State<LoginPage> {
         // 跳转到主页
         Navigator.push(context, MaterialPageRoute(builder: (ctx) {
           // TODO select UI
+          // return openlist_native_ui.HomePage();
           if (Platform.isLinux) {
            //  由于插件不支持Linux webview所以使用原生界面或者直接使用系统网页打开
            return openlist_native_ui.HomePage();

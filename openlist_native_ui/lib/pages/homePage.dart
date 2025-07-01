@@ -49,7 +49,7 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
         break;
       case AppLifecycleState.resumed: //从后台切换前台，界面可见
         print("AppLifecycleState.resumed");
-        // TODO
+        // TODO 整合写到utils里面与web_ui公用
         waitHttpPong().then((ret) async {
           if (ret == "restarted") {
             Directory appDir = await  getApplicationDocumentsDirectory();
