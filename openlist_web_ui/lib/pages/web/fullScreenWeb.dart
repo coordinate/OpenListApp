@@ -7,7 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:get/get.dart';
-import 'package:openlist_web_ui/pages/web/fullScreenWeb.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
@@ -15,20 +14,20 @@ import 'package:openlist_config/config/global.dart';
 import 'package:openlist_web_ui/l10n/generated/openlist_web_ui_localizations.dart';
 import 'package:openlist_utils/init.dart';
 
-GlobalKey<WebScreenState> webGlobalKey = GlobalKey();
+GlobalKey<FullScreenWebState> webGlobalKey = GlobalKey();
 
-class WebScreen extends StatefulWidget {
-  const WebScreen({super.key, required this.startUrl});
+class FullScreenWeb extends StatefulWidget {
+  const FullScreenWeb({super.key, required this.startUrl});
 
   final String startUrl;
 
   @override
   State<StatefulWidget> createState() {
-    return WebScreenState();
+    return FullScreenWebState();
   }
 }
 
-class WebScreenState extends State<WebScreen> {
+class FullScreenWebState extends State<FullScreenWeb> {
   InAppWebViewController? _webViewController;
   InAppWebViewSettings settings = InAppWebViewSettings(
     allowsInlineMediaPlayback: true,
@@ -41,7 +40,6 @@ class WebScreenState extends State<WebScreen> {
 
   double _progress = 0;
   String? _url;
-  String? _currentUrl;
   // String _url = "http://localhost:8889";
   // String _url = "http://localhost:15244";
   // String _url = "https://baidu.com";
@@ -54,12 +52,16 @@ class WebScreenState extends State<WebScreen> {
 
   @override
   void initState() {
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive,
+        overlays: []);
     super.initState();
     // Future.delayed(Duration(seconds: 1),(){_webViewController?.reload();});
   }
 
   @override
   void dispose() {
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+        overlays: [SystemUiOverlay.top, SystemUiOverlay.bottom]);
     _webViewController?.dispose();
     super.dispose();
   }
@@ -74,24 +76,7 @@ class WebScreenState extends State<WebScreen> {
           _webViewController?.goBack();
         },
         child: Scaffold(
-          appBar: AppBar(
-            // backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-            title: Text("OpenList"),
-            actions: [
-              // IconButton(onPressed: (){_changeDataPath();}, icon: Icon(Icons.file_copy_outlined)),
-              IconButton(onPressed: (){_changePassword();}, icon: Icon(Icons.password)),
-              IconButton(onPressed: (){_webViewController?.reload();}, icon: Icon(Icons.refresh)),
-              IconButton(onPressed: (){_goToFullScreen();}, icon: Icon(Icons.fullscreen)),
-              IconButton(onPressed: (){_openInBrowser();}, icon: Icon(Icons.open_in_browser))
-            ],
-          ),
           body: Column(children: <Widget>[
-            // SizedBox(height: MediaQuery.of(context).padding.top),
-            // LinearProgressIndicator(
-            //   value: _progress,
-            //   backgroundColor: Colors.grey[200],
-            //   valueColor: const AlwaysStoppedAnimation<Color>(Colors.blue),
-            // ),
             Expanded(
               child: InAppWebView(
                 initialSettings: settings,
@@ -170,7 +155,6 @@ class WebScreenState extends State<WebScreen> {
                   // setState(() {
                   //   _progress = 0;
                   // });
-                  _currentUrl = url.toString();
                   if (!tokenSetted) {
                     tokenSetted = true;
                     await controller.webStorage.localStorage
@@ -199,6 +183,10 @@ class WebScreenState extends State<WebScreen> {
             ),
           ]),
         ));
+  }
+
+  _changeDataPath(){
+
   }
 
   _changePassword(){
@@ -244,15 +232,9 @@ class WebScreenState extends State<WebScreen> {
     });
   }
 
-  _goToFullScreen() async {
-    var url = await _webViewController?.getUrl();
+  _showAppInfo(){
     Navigator.push(context, MaterialPageRoute(builder: (ctx) {
-      return FullScreenWeb(key: UniqueKey(),startUrl: url!.toString(),);
+      return AppInfoPage(key: UniqueKey());
     }));
-  }
-
-  _openInBrowser() async {
-    var url = await _webViewController?.getUrl();
-    launchUrlString(url!.toString());
   }
 }
