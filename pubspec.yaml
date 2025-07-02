@@ -72,6 +72,7 @@ msix_config:
   tile_icon_path: ./assets/icon/icon.png
   icons_background_color: transparent
   capabilities: internetClientServer, privateNetworkClientServer, removableStorage, location
+  install_certificate: false
 
 flutter_launcher_icons:
   android: true
