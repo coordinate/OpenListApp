@@ -65,6 +65,16 @@ jobs:
         uses: dart-lang/setup-dart@v1
         with:
           sdk: stable
+      - name: Init Signature
+        run: |
+          cd android
+          touch local.properties
+          echo storePassword='${{ secrets.STORE_PASSWORD }}' >> local.properties
+          echo keyPassword='${{ secrets.KEY_PASSWORD }}' >> local.properties
+          echo keyAlias='${{ secrets.KEY_ALIAS }}' >> local.properties
+          echo storeFile='../key.jks' >> local.properties
+          # 从Secrets读取无换行符Base64解码, 然后保存到到key.jks, base64 -i key.jks -o key.jks.base64
+          echo ${{ secrets.KEY_STORE }} | base64 --decode > $GITHUB_WORKSPACE/android/key.jks
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
