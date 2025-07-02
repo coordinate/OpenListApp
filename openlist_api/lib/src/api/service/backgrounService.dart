@@ -88,6 +88,7 @@ class BackgrounService {
         //  登录失败
         print(e.toString());
         ret = "restarted";
+        return ret;
       }
     }
   }

@@ -1,12 +1,16 @@
 import 'dart:async';
 import 'dart:io';
 
+import 'package:openlist_api/openlist_api.dart';
+import 'package:openlist_config/config/config.dart';
+import 'package:openlist_utils/init.dart';
 import 'package:openlist_web_ui/l10n/generated/openlist_web_ui_localizations.dart';
 import 'package:openlist_web_ui/pages/storages/StoragesPage.dart';
 import 'package:openlist_web_ui/pages/tasks/TasksPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tdesign_flutter/tdesign_flutter.dart';
 
@@ -43,6 +47,13 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
         break;
       case AppLifecycleState.resumed: //从后台切换前台，界面可见
         // showToast( "程序状态：${state.toString()}");
+        var backgrounService = BackgrounService(AListWebAPIBaseUrl);
+        backgrounService.waitHttpPong().then((ret) async {
+          if (ret == "restarted") {
+            await init();
+          }
+          setState(() {});
+        });
         if (_timer != null) {
           _timer!.cancel();
         }
