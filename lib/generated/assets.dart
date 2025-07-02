@@ -2,7 +2,7 @@
 class Assets {
   Assets._();
 
-  static const String androidImg = 'assets/images/android/img.png';
+  static const String androidFiles = 'assets/images/android/files.png';
   static const String assetsREADME = 'assets/README.md';
   static const String filesAvatar = 'assets/files/avatar.png';
   static const String filesFile = 'assets/files/file.png';
@@ -17,5 +17,6 @@ class Assets {
   static const String macosStorages = 'assets/images/macos/storages.png';
   static const String splash1 = 'assets/images/splash/1.jpg';
   static const String splash2 = 'assets/images/splash/2.png';
+  static const String windowsImg = 'assets/images/windows/img.png';
 
 }
