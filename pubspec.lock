@@ -873,7 +873,7 @@ packages:
       path: openlist_config
       relative: true
     source: path
-    version: "0.0.1"
+    version: "0.0.1+1"
   openlist_global:
     dependency: "direct main"
     description:

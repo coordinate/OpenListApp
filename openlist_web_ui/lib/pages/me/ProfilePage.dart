@@ -2,6 +2,7 @@ import 'dart:io';
 import 'dart:math';
 
 import 'package:openlist_utils/permission.dart';
+import 'package:openlist_web_ui/pages/common/favorite.dart';
 import 'package:openlist_web_ui/pages/web/web.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -123,6 +124,15 @@ class _WebProfilePageState extends State<WebProfilePage> {
                   builder: (context) => WebScreen(
                     startUrl: url,
                   )));
+            }),
+        ListTile(
+          //第二个功能项
+            title: Text("Favorites"),
+            leading: Icon(Icons.favorite, color: Colors.red),
+            trailing: const Icon(Icons.arrow_right),
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => FavoritePage()));
             }),
         ListTile(
             //第二个功能项
