@@ -8,6 +8,7 @@ class Assets {
   static const String filesFile = 'assets/files/file.png';
   static const String filesFolder = 'assets/files/folder.png';
   static const String filesImage = 'assets/files/image.jpg';
+  static const String iconCom.iotserv.OpenIoTHubApp = 'assets/icon/com.iotserv.OpenIoTHubApp.svg';
   static const String iconIcon = 'assets/icon/icon.png';
   static const String iosFiles = 'assets/images/ios/files.png';
   static const String iosStorages = 'assets/images/ios/storages.png';
@@ -17,6 +18,6 @@ class Assets {
   static const String macosStorages = 'assets/images/macos/storages.png';
   static const String splash1 = 'assets/images/splash/1.jpg';
   static const String splash2 = 'assets/images/splash/2.png';
-  static const String windowsImg = 'assets/images/windows/img.png';
+  static const String windowsStorages = 'assets/images/windows/storages.png';
 
 }
