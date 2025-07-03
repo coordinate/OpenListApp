@@ -161,6 +161,7 @@ jobs:
         run: |
           sudo snap install snapcraft --classic
       - run: hash -r
+      - run: flutter clean
       - name: Setup LXD
         uses: canonical/setup-lxd@main
         with:
