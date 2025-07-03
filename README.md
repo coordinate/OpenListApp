@@ -1,7 +1,7 @@
 # OpenList App
-### 一个AList、OpenList跨平台客户端，支持iOS、macOS、Windows、Android、Linux
+### 一个AList、OpenList跨平台客户端,目前内置OpenList服务器，不需要额外连接服务器，支持iOS、macOS、Windows、Android、Linux
 
-### 通过CI构建、代码上传谷歌Dart pub.dev的方式留备份解决大家广泛关心的安全性问题(目前由于库达到几百兆上传不上，但是目前全部CI构建)，本项目不提供api服务器，服务器由上游OpenList等社区提供
+### 通过CI构建，本项目不提供api服务器，服务器由上游OpenList等社区提供
 ### 项目提供两套UI，一套是原先的Web界面直接加载，另一套是目前已经开发完核心功能的原生界面，目前默认Linux使用原生界面其他都使用Web界面
 ### 项目结构
 * [openlist](/lib/main.dart)APP入口项目
