@@ -11,6 +11,7 @@ import 'package:openlist_utils/init.dart';
 import '../l10n/generated/openlist_global_ui_localizations.dart';
 import 'package:openlist_utils/toast.dart';
 import 'package:tdesign_flutter/tdesign_flutter.dart';
+import 'package:openlist_utils/init.dart' as init;
 
 import 'package:openlist_web_ui/pages/homePage.dart' as openlist_web_ui;
 import 'package:openlist_native_ui/pages/homePage.dart' as openlist_native_ui;
@@ -37,13 +38,13 @@ class _LoginPageState extends State<LoginPage> {
   @override
   void initState() {
     super.initState();
-    // Timer.periodic(const Duration(milliseconds: 200), (timer) {
-    //   if (inited) {
-    //     timer.cancel();
-    //     _initList();
-    //   }
-    // });
-    Future.delayed(Duration(milliseconds: 200), (){_initList();});
+    Timer.periodic(const Duration(milliseconds: 40), (timer) {
+      if (init.inited) {
+        timer.cancel();
+        _initList();
+      }
+    });
+    // Future.delayed(Duration(milliseconds: 200), (){_initList();});
   }
 
   @override
