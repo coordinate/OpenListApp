@@ -12,9 +12,14 @@ import 'package:window_manager/window_manager.dart';
 import 'l10n/generated/openlist_localizations.dart';
 import 'package:openlist_config/model/custom_theme.dart';
 import 'package:openlist_global/pages/login.dart';
+import 'package:openlist_utils/service/internal_plugin_service.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  if (Platform.isAndroid) {
+    InternalPluginService.instance.init();
+    InternalPluginService.instance.start();
+  }
   init();
   if (Platform.isMacOS || Platform.isWindows || Platform.isLinux) {
     await windowManager.ensureInitialized();
