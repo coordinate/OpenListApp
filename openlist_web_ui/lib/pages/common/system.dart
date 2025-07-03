@@ -11,7 +11,6 @@ class SystemPage extends StatefulWidget {
 }
 
 class _SystemPageState extends State<SystemPage> {
-  String version = "";
   @override
   void initState() {
     super.initState();

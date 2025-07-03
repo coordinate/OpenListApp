@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
@@ -7,6 +8,7 @@ import 'package:package_info_plus/package_info_plus.dart';
 import 'package:openlist_config/config/config.dart';
 import 'package:openlist_web_ui/l10n/generated/openlist_web_ui_localizations.dart';
 import 'package:openlist_utils/toast.dart';
+import 'package:path_provider/path_provider.dart';
 
 class AppInfoPage extends StatefulWidget {
   AppInfoPage({required Key key}) : super(key: key);
@@ -28,11 +30,14 @@ class _AppInfoPageState extends State<AppInfoPage> {
 
   //版本号
   String buildNumber = "";
+  //App数据位置
+  String appDataDir = "";
 
   @override
   void initState() {
     super.initState();
     _getAppInfo();
+    _getAppDataDir();
   }
 
   @override
@@ -48,7 +53,8 @@ class _AppInfoPageState extends State<AppInfoPage> {
     _result.add("${OpenListWebUiLocalizations.of(context).version}$version");
     _result.add("OpenList ${OpenListWebUiLocalizations.of(context).version}$aListVersion");
     _result.add("${OpenListWebUiLocalizations.of(context).version_sn}$buildNumber");
-    // _result.add("${OpenListWebUiLocalizations.of(context).icp_number}皖ICP备2022013511号-3A");
+    _result.add("APP Data Dir：$appDataDir");
+    // _result.add("${OpenListWebUiLocalizations.of(context).icp_number}皖ICP备");
 
     final tiles = _result.map(
       (pair) {
@@ -106,6 +112,13 @@ class _AppInfoPageState extends State<AppInfoPage> {
     );
   }
 
+  _getAppDataDir() async {
+    // TODO 目前使用这个,以后用户设置
+    Directory appDir = await getApplicationDocumentsDirectory();
+    setState(() {
+      appDataDir = appDir.path.toString();
+    });
+  }
   _getAppInfo() async {
     PackageInfo.fromPlatform().then((PackageInfo packageInfo) {
       setState(() {
