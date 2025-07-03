@@ -1,6 +1,6 @@
 name: openlist_utils
 description: "OpenListApp utils"
-version: 0.0.1
+version: 0.0.1+2
 homepage:
 
 environment:

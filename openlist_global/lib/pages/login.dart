@@ -4,8 +4,10 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:openlist_api/openlist_api.dart';
 import 'package:openlist_config/config/config.dart';
 import 'package:openlist_config/config/global.dart';
+import 'package:openlist_utils/init.dart';
 import '../l10n/generated/openlist_global_ui_localizations.dart';
 import 'package:openlist_utils/toast.dart';
 import 'package:tdesign_flutter/tdesign_flutter.dart';
@@ -157,6 +159,13 @@ class _LoginPageState extends State<LoginPage> {
       //  登录失败
       show_failed("Login failed:${e.toString()}", context);
       print(e.toString());
+      // var backgrounService = BackgrounService(AListWebAPIBaseUrl);
+      // backgrounService.waitHttpPong().then((ret) async {
+      //   if (ret == "restarted") {
+      //     await init();
+      //   }
+      //   setState(() {});
+      // });
       return;
     }
   }
