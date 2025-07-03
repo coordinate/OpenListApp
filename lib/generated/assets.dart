@@ -8,7 +8,7 @@ class Assets {
   static const String filesFile = 'assets/files/file.png';
   static const String filesFolder = 'assets/files/folder.png';
   static const String filesImage = 'assets/files/image.jpg';
-  static const String iconCom.iotserv.OpenIoTHubApp = 'assets/icon/com.iotserv.OpenIoTHubApp.svg';
+  static const String icon1list = 'assets/icon/1list.svg';
   static const String iconIcon = 'assets/icon/icon.png';
   static const String iosFiles = 'assets/images/ios/files.png';
   static const String iosStorages = 'assets/images/ios/storages.png';
