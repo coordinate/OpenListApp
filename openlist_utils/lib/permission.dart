@@ -7,6 +7,7 @@ Future<void> requestStorage(BuildContext ctx) async {
   PermissionStatus status2 = await Permission.videos.request();
   PermissionStatus status3 = await Permission.audio.request();
   PermissionStatus status4 = await Permission.photos.request();
+  PermissionStatus status5 = await Permission.manageExternalStorage.request();
   PermissionStatus status = await Permission.storage.request();
   if (status.isGranted) {
 // 存储权限已授权，可以进行文件读写操作

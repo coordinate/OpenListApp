@@ -1,6 +1,6 @@
 name: openlist_global
 description: "openlist global code"
-version: 0.0.2
+version: 0.0.2+2
 homepage: https://github.com/OpenListApp
 
 environment:

@@ -872,7 +872,7 @@ packages:
       path: openlist_global
       relative: true
     source: path
-    version: "0.0.2"
+    version: "0.0.2+2"
   openlist_native_ui:
     dependency: transitive
     description:
