@@ -53,7 +53,7 @@ class _FavoritePageState extends State<FavoritePage> {
     ).toList();
 
     return Scaffold(
-      appBar: AppBar(title: Text(OpenListWebUiLocalizations.of(context).app_info), actions: <Widget>[
+      appBar: AppBar(title: Text("Favorites"), actions: <Widget>[
       ]),
       body: ListView(children: divided),
     );
