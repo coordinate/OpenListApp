@@ -4,6 +4,7 @@ import 'dart:developer';
 import 'package:openlist_api/openlist_api.dart';
 import 'package:openlist_config/config/config.dart';
 import 'package:openlist_config/keys/keys.dart';
+import 'package:openlist_utils/openlist_utils.dart';
 import 'package:openlist_web_ui/pages/common/appInfo.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -139,6 +140,13 @@ class WebScreenState extends State<WebScreen> {
                 //   }
                 },
                 onDownloadStartRequest: (controller, url) async {
+                  // show_info("onDownloadStartRequest:$url", context);
+                  String urlStr = url.url.toString();
+                  ClipboardData data = new ClipboardData(text:urlStr);
+                  Clipboard.setData(data);
+                  show_info("Url copied to clipboard", context);
+                  launchUrlString(urlStr);
+                  return;
                   Get.showSnackbar(GetSnackBar(
                     title: OpenListWebUiLocalizations.of(context).downloadThisFile,
                     message: url.suggestedFilename ??
