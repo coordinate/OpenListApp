@@ -25,6 +25,7 @@ Future<void> init() async {
       break;
     }
     await initBackgroundService();
+    await Future.delayed(Duration(milliseconds: 400));
   }
   await backgrounService.setConfigData(appDir.path);
   // await Future.delayed(Duration(milliseconds: 50));
