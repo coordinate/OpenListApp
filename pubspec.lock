@@ -17,6 +17,14 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "7.5.4"
+  android_intent_plus:
+    dependency: transitive
+    description:
+      name: android_intent_plus
+      sha256: dfc1fd3a577205ae8f11e990fb4ece8c90cceabbee56fcf48e463ecf0bd6aae3
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "5.3.0"
   archive:
     dependency: transitive
     description:
@@ -693,6 +701,14 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.4.0"
+  installed_apps:
+    dependency: transitive
+    description:
+      name: installed_apps
+      sha256: dd2b7c531f91114cd6df447c56567593c9799ca83f057137ae719324ae0afd06
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.6.0"
   intl:
     dependency: "direct main"
     description:
@@ -837,6 +853,14 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "3.16.9"
+  native_flutter_downloader:
+    dependency: transitive
+    description:
+      name: native_flutter_downloader
+      sha256: fadae9d817fde491a554e4b955fd5d6a7ff0dac5c7ae8e0255faa0cf511b7a2b
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.3.6"
   nested:
     dependency: transitive
     description:

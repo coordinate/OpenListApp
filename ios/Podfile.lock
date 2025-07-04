@@ -45,6 +45,8 @@ PODS:
     - OrderedSet (~> 6.0.3)
   - image_picker_ios (0.0.1):
     - Flutter
+  - native_flutter_downloader (0.0.1):
+    - Flutter
   - openlist_background_service (0.0.1):
     - Flutter
   - OrderedSet (6.0.3)
@@ -77,6 +79,7 @@ DEPENDENCIES:
   - flutter_foreground_task (from `.symlinks/plugins/flutter_foreground_task/ios`)
   - flutter_inappwebview_ios (from `.symlinks/plugins/flutter_inappwebview_ios/ios`)
   - image_picker_ios (from `.symlinks/plugins/image_picker_ios/ios`)
+  - native_flutter_downloader (from `.symlinks/plugins/native_flutter_downloader/ios`)
   - openlist_background_service (from `.symlinks/plugins/openlist_background_service/ios`)
   - package_info_plus (from `.symlinks/plugins/package_info_plus/ios`)
   - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/darwin`)
@@ -105,6 +108,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/flutter_inappwebview_ios/ios"
   image_picker_ios:
     :path: ".symlinks/plugins/image_picker_ios/ios"
+  native_flutter_downloader:
+    :path: ".symlinks/plugins/native_flutter_downloader/ios"
   openlist_background_service:
     :path: ".symlinks/plugins/openlist_background_service/ios"
   package_info_plus:
@@ -130,6 +135,7 @@ SPEC CHECKSUMS:
   flutter_foreground_task: a159d2c2173b33699ddb3e6c2a067045d7cebb89
   flutter_inappwebview_ios: b89ba3482b96fb25e00c967aae065701b66e9b99
   image_picker_ios: 7fe1ff8e34c1790d6fff70a32484959f563a928a
+  native_flutter_downloader: 13d6a37f02eeafe98aa8416a083e3e47f7ec0c74
   openlist_background_service: 3952c8ddeb9ceb28f405f2042721d0d7075877da
   OrderedSet: e539b66b644ff081c73a262d24ad552a69be3a94
   package_info_plus: af8e2ca6888548050f16fa2f1938db7b5a5df499

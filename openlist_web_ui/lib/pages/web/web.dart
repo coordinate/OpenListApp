@@ -1,15 +1,16 @@
 import 'dart:convert';
 import 'dart:developer';
+import 'dart:io';
 
+import 'package:android_intent_plus/android_intent.dart';
+import 'package:installed_apps/installed_apps.dart';
 import 'package:openlist_api/openlist_api.dart';
 import 'package:openlist_config/config/config.dart';
 import 'package:openlist_config/keys/keys.dart';
 import 'package:openlist_utils/openlist_utils.dart';
-import 'package:openlist_web_ui/pages/common/appInfo.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
-import 'package:get/get.dart';
 import 'package:openlist_web_ui/pages/web/fullScreenWeb.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -17,7 +18,6 @@ import 'package:url_launcher/url_launcher_string.dart';
 
 import 'package:openlist_config/config/global.dart';
 import 'package:openlist_web_ui/l10n/generated/openlist_web_ui_localizations.dart';
-import 'package:openlist_utils/init.dart';
 
 GlobalKey<WebScreenState> webGlobalKey = GlobalKey();
 
@@ -145,32 +145,72 @@ class WebScreenState extends State<WebScreen> {
                   ClipboardData data = new ClipboardData(text:urlStr);
                   Clipboard.setData(data);
                   show_info("Url copied to clipboard", context);
+                  bool? isInstalled;
+                  if (Platform.isAndroid){
+                    isInstalled = await InstalledApps.isAppInstalled('com.dv.adm');
+                  }
+                  if (Platform.isAndroid&&isInstalled != null&&isInstalled) {
+                    show_info("isInstalled", context);
+                    final AndroidIntent intent = AndroidIntent(
+                        action: 'action_main',
+                        package: 'com.dv.adm',
+                        componentName: 'com.dv.adm.AEditor',
+                        arguments: <String, dynamic>{
+                          'android.intent.extra.TEXT': urlStr,
+                          // 'com.android.extra.filename': "fileName.mp4",
+                        },
+                    );
+                    intent.launch().then((value) => null).catchError((e) => show_failed(e, context));
+                    return;
+                  }
+                  // isInstalled = await InstalledApps.isAppInstalled('idm.internet.download.manager');
+                  // if (isInstalled != null&&isInstalled) {
+                  //   show_info("isInstalled", context);
+                  //   final AndroidIntent intent = AndroidIntent(
+                  //     action: 'action_main',
+                  //     package: 'idm.internet.download.manager',
+                  //     componentName: 'idm.internet.download.manager.UrlHandlerDownloader',
+                  //     arguments: <String, dynamic>{
+                  //       'android.intent.extra.TEXT': urlStr,
+                  //       // 'com.android.extra.filename': "fileName.mp4",
+                  //     },
+                  //   );
+                  //   intent.launch().then((value) => null).catchError((e) => show_failed(e, context));
+                  //   return;
+                  // }
+                  // isInstalled = await InstalledApps.isAppInstalled('com.xunlei.downloadprovider');
+                  // if (isInstalled != null&&isInstalled) {
+                  //   show_info("isInstalled", context);
+                  //   final AndroidIntent intent = AndroidIntent(
+                  //     action: 'action_main',
+                  //     package: 'com.xunlei.downloadprovider',
+                  //     componentName: 'com.xunlei.downloadprovider.launch.LaunchActivity',
+                  //     arguments: <String, dynamic>{
+                  //       'android.intent.extra.TEXT': urlStr,
+                  //       // 'com.android.extra.filename': "fileName.mp4",
+                  //     },
+                  //   );
+                  //   intent.launch().then((value) => null).catchError((e) => show_failed(e, context));
+                  //   return;
+                  // }
+                  //
+                  // NativeFlutterDownloader.initialize();
+                  // Directory? appDir = await getDownloadsDirectory();
+                  // show_info(appDir!.path, context);
+                  // final permission = await NativeFlutterDownloader.requestPermission();
+                  // if (permission == StoragePermissionStatus.granted) {
+                  //   await NativeFlutterDownloader.download(
+                  //     urlStr,
+                  //     // "urlController.text",
+                  //     // filename 'your_filename',
+                  //     savedFilePath: appDir!.path,
+                  //   );
+                  // } else {
+                  //   debugPrint('Permission denied =(');
+                  // }
+                  // return;
                   launchUrlString(urlStr);
                   return;
-                  Get.showSnackbar(GetSnackBar(
-                    title: OpenListWebUiLocalizations.of(context).downloadThisFile,
-                    message: url.suggestedFilename ??
-                        url.contentDisposition ??
-                        url.toString(),
-                    duration: const Duration(seconds: 3),
-                    mainButton: Column(children: [
-                      TextButton(
-                        onPressed: () {
-                          launchUrlString(url.url.toString());
-                        },
-                        child: Text(OpenListWebUiLocalizations.of(context).download),
-                      ),
-                    ]),
-                    onTap: (_) {
-                      Clipboard.setData(
-                          ClipboardData(text: url.url.toString()));
-                      Get.closeCurrentSnackbar();
-                      Get.showSnackbar(GetSnackBar(
-                        message: OpenListWebUiLocalizations.of(context).copiedToClipboard,
-                        duration: const Duration(seconds: 1),
-                      ));
-                    },
-                  ));
                 },
                 onLoadStop:
                     (InAppWebViewController controller, Uri? url) async {

@@ -77,6 +77,29 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+        <!-- Android ADM intent -->
+        <activity android:name="com.dv.adm"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN">
+                </action>
+            </intent-filter>
+        </activity>
+        <activity android:name="idm.internet.download.manager"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN">
+                </action>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.xunlei.downloadprovider"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN">
+                </action>
+            </intent-filter>
+        </activity>
+        <!-- END OF ADM INTENT -->
     </application>
     <!-- Required to query activities that can process text, see:
          https://developer.android.com/training/package-visibility and
