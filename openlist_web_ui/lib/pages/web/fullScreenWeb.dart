@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:openlist_api/openlist_api.dart';
 import 'package:openlist_config/config/config.dart';
+import 'package:openlist_utils/toast.dart';
 import 'package:openlist_web_ui/pages/common/appInfo.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -125,30 +126,12 @@ class FullScreenWebState extends State<FullScreenWeb> {
                 //   }
                 },
                 onDownloadStartRequest: (controller, url) async {
-                  Get.showSnackbar(GetSnackBar(
-                    title: OpenListWebUiLocalizations.of(context).downloadThisFile,
-                    message: url.suggestedFilename ??
-                        url.contentDisposition ??
-                        url.toString(),
-                    duration: const Duration(seconds: 3),
-                    mainButton: Column(children: [
-                      TextButton(
-                        onPressed: () {
-                          launchUrlString(url.url.toString());
-                        },
-                        child: Text(OpenListWebUiLocalizations.of(context).download),
-                      ),
-                    ]),
-                    onTap: (_) {
-                      Clipboard.setData(
-                          ClipboardData(text: url.url.toString()));
-                      Get.closeCurrentSnackbar();
-                      Get.showSnackbar(GetSnackBar(
-                        message: OpenListWebUiLocalizations.of(context).copiedToClipboard,
-                        duration: const Duration(seconds: 1),
-                      ));
-                    },
-                  ));
+                  String urlStr = url.url.toString();
+                  ClipboardData data = new ClipboardData(text:urlStr);
+                  Clipboard.setData(data);
+                  show_info("Url copied to clipboard", context);
+                  launchUrlString(urlStr);
+                  return;
                 },
                 onLoadStop:
                     (InAppWebViewController controller, Uri? url) async {
