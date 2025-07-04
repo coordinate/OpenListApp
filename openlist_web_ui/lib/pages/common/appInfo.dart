@@ -3,12 +3,14 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
 import 'package:openlist_config/config/config.dart';
 import 'package:openlist_web_ui/l10n/generated/openlist_web_ui_localizations.dart';
 import 'package:openlist_utils/toast.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class AppInfoPage extends StatefulWidget {
   AppInfoPage({required Key key}) : super(key: key);
@@ -30,6 +32,7 @@ class _AppInfoPageState extends State<AppInfoPage> {
 
   //版本号
   String buildNumber = "";
+
   //App数据位置
   String appDataDir = "";
 
@@ -49,65 +52,52 @@ class _AppInfoPageState extends State<AppInfoPage> {
   Widget build(BuildContext context) {
     final List _result = [];
     _result.add("${OpenListWebUiLocalizations.of(context).app_name}$appName");
-    _result.add("${OpenListWebUiLocalizations.of(context).package_name}$packageName");
+    _result.add(
+      "${OpenListWebUiLocalizations.of(context).package_name}$packageName",
+    );
     _result.add("${OpenListWebUiLocalizations.of(context).version}$version");
-    _result.add("OpenList ${OpenListWebUiLocalizations.of(context).version}$aListVersion");
-    _result.add("${OpenListWebUiLocalizations.of(context).version_sn}$buildNumber");
-    _result.add("APP Data Dir：$appDataDir");
+    _result.add(
+      "OpenList ${OpenListWebUiLocalizations.of(context).version}$aListVersion",
+    );
+    _result.add(
+      "${OpenListWebUiLocalizations.of(context).version_sn}$buildNumber",
+    );
+    // _result.add("APP Data Dir：$appDataDir");
     // _result.add("${OpenListWebUiLocalizations.of(context).icp_number}皖ICP备");
 
-    final tiles = _result.map(
-      (pair) {
+    final tiles = _result.map((pair) {
+      if ((pair as String).contains("APP Data Dir")) {
         return ListTile(
-          title: Text(
-            pair,
-          ),
+          title: Text(pair),
+          onTap: () {
+            launchUrl(Uri.directory(pair));
+          },
         );
-      },
-    );
+      }
+      return ListTile(title: Text(pair));
+    });
     List<ListTile> tilesList = tiles.toList();
-//     tilesList.add(ListTile(
-//       title: Text(
-//         OpenListWebUiLocalizations.of(context).feedback_channels,
-//         style: TextStyle(color: Colors.green),
-//       ),
-//       onTap: () {
-//         Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-// //              return Text("${pair.iP}:${pair.port}");
-//           return FeedbackPage(
-//             key: UniqueKey(),
-//           );
-//         }));
-//       },
-//     ));
-//     TODO 支持信息待修改更新，旧代码是其他项目移植过来的
-//     tilesList.add(ListTile(
-//       title: Text(
-//           OpenListWebUiLocalizations.of(context).online_feedback,
-//         style: TextStyle(color: Colors.green),
-//       ),
-//       onTap: () {
-//         launchURL("https://github.com/OpenListApp/OpenListApp");
-//       },
-//     ));
-//     tilesList.add(ListTile(
-//       title: Text(
-//         OpenListWebUiLocalizations.of(context).privacy_policy,
-//         style: TextStyle(color: Colors.green),
-//       ),
-//       onTap: () {
-//         goToURL(context, "https://github.com/OpenListApp/OpenListApp",
-//             OpenListWebUiLocalizations.of(context).privacy_policy);
-//       },
-//     ));
-    final divided = ListTile.divideTiles(
-      context: context,
-      tiles: tilesList,
-    ).toList();
+    tilesList.add(
+      ListTile(
+        title: Text("APP Data Dir：$appDataDir"),
+        onTap: () async {
+          ClipboardData data = new ClipboardData(text:appDataDir);
+          Clipboard.setData(data);
+          show_info("Path copied to clipboard", context);
+          if (Platform.isWindows || Platform.isMacOS || Platform.isLinux) {
+            launchUrl(Uri.directory(appDataDir));
+          }
+        },
+      ),
+    );
+    final divided =
+        ListTile.divideTiles(context: context, tiles: tilesList).toList();
 
     return Scaffold(
-      appBar: AppBar(title: Text(OpenListWebUiLocalizations.of(context).app_info), actions: <Widget>[
-      ]),
+      appBar: AppBar(
+        title: Text(OpenListWebUiLocalizations.of(context).app_info),
+        actions: <Widget>[],
+      ),
       body: ListView(children: divided),
     );
   }
@@ -119,6 +109,7 @@ class _AppInfoPageState extends State<AppInfoPage> {
       appDataDir = appDir.path.toString();
     });
   }
+
   _getAppInfo() async {
     PackageInfo.fromPlatform().then((PackageInfo packageInfo) {
       setState(() {
@@ -129,8 +120,7 @@ class _AppInfoPageState extends State<AppInfoPage> {
       });
     });
 
-    final dio = Dio(BaseOptions(
-        baseUrl: AListAPIBaseUrl));
+    final dio = Dio(BaseOptions(baseUrl: AListAPIBaseUrl));
     String reqUri = "/api/public/settings";
     // String reqUri = "/api/auth/login/hash";
     try {
