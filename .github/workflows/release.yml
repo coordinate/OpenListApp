@@ -55,7 +55,7 @@ jobs:
         with:
           files: |
             ./build/app/outputs/flutter-apk/*.apk
-          body_path: ./.github/doc/DownloadDescription.md
+          # body_path: ./.github/doc/DownloadDescription.md
       - run: flutter build appbundle --release
       - name: Release AAB
         uses: softprops/action-gh-release@v2
@@ -63,7 +63,7 @@ jobs:
         with:
           files: |
             ./build/app/outputs/bundle/release/app-release.aab
-          body_path: ./.github/doc/DownloadDescription.md
+          # body_path: ./.github/doc/DownloadDescription.md
 
   ios:
     name: iOS
@@ -96,7 +96,7 @@ jobs:
         with:
           files: |
             ios-release.zip
-          body_path: ./.github/doc/DownloadDescription.md
+          # body_path: ./.github/doc/DownloadDescription.md
 
   linux:
     name: Linux
@@ -132,7 +132,7 @@ jobs:
         with:
           files: |
             linux-release.zip
-          body_path: ./.github/doc/DownloadDescription.md
+          # body_path: ./.github/doc/DownloadDescription.md
       - name: Install flutter_distributor
         run: |
           dart pub global activate flutter_distributor
@@ -156,7 +156,7 @@ jobs:
             dist/**/**/*.deb
             dist/**/**/*.rpm
             dist/**/**/*.AppImage
-          body_path: ./.github/doc/DownloadDescription.md
+          # body_path: ./.github/doc/DownloadDescription.md
       - run: rm -rf ./build
       - name: Install snapcraft
         run: |
@@ -205,7 +205,7 @@ jobs:
         with:
           files: |
             ./openlist.dmg
-          body_path: ./.github/doc/DownloadDescription.md
+          # body_path: ./.github/doc/DownloadDescription.md
   #
   windows:
     name: Windows
@@ -235,7 +235,7 @@ jobs:
         with:
           files: |
             windows-release.zip
-          body_path: ./.github/doc/DownloadDescription.md
+          # body_path: ./.github/doc/DownloadDescription.md
       - run: dart run msix:create
       - name: Release windows msix
         uses: softprops/action-gh-release@v2
@@ -243,7 +243,7 @@ jobs:
         with:
           files: |
             ./build/windows/x64/runner/Release/openlist.msix
-          body_path: ./.github/doc/DownloadDescription.md
+          # body_path: ./.github/doc/DownloadDescription.md
       - name: Building the installer
         run: |
           "%programfiles(x86)%\Inno Setup 6\iscc.exe" "windows-setup.iss"
@@ -254,7 +254,7 @@ jobs:
         with:
           files: |
             Output/OpenList-Setup.exe
-          body_path: ./.github/doc/DownloadDescription.md
+          # body_path: ./.github/doc/DownloadDescription.md
 
   build-flutter-app:
     name: Build and compressed Flutter app
@@ -298,7 +298,7 @@ jobs:
         with:
           files: |
             OpenListApp-Linux-Portable.tar.gz
-          body_path: ./.github/doc/DownloadDescription.md
+          # body_path: ./.github/doc/DownloadDescription.md
 
   build-flatpak:
     name: Build flatpak
@@ -335,4 +335,4 @@ jobs:
         with:
           files: |
             OpenListApp.flatpak
-          body_path: ./.github/doc/DownloadDescription.md
+          # body_path: ./.github/doc/DownloadDescription.md
