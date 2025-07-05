@@ -104,7 +104,7 @@ class _WebProfilePageState extends State<WebProfilePage> {
         ListTile(
           //第二个功能项
             title: Text("Settings"),
-            leading: Icon(TDIcons.book_filled, color: Colors.orange),
+            leading: Icon(TDIcons.setting, color: Colors.orange),
             trailing: const Icon(Icons.arrow_right),
             onTap: () {
               String url = "$AListAPIBaseUrl/@manage/settings/site";
@@ -128,7 +128,7 @@ class _WebProfilePageState extends State<WebProfilePage> {
         ListTile(
           //第二个功能项
             title: Text("Github"),
-            leading: Icon(TDIcons.book_filled, color: Colors.deepPurple),
+            leading: Icon(TDIcons.logo_github, color: Colors.deepPurple),
             trailing: const Icon(Icons.arrow_right),
             onTap: () {
               String url = "https://github.com/OpenListApp/OpenListApp";
@@ -140,7 +140,7 @@ class _WebProfilePageState extends State<WebProfilePage> {
         ListTile(
           //第二个功能项
             title: Text("BiliBili"),
-            leading: Icon(TDIcons.book_filled, color: Colors.deepOrange),
+            leading: Icon(TDIcons.video, color: Colors.deepOrange),
             trailing: const Icon(Icons.arrow_right),
             onTap: () {
               String url = "https://space.bilibili.com/3546876097857548";
