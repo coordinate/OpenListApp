@@ -195,7 +195,7 @@ jobs:
           repository: 'OpenListApp/OpenListLib'
           latest: true
           fileName: 'OpenListMobile.xcframework.zip'
-          out-file-path: 'openlist_background_service/macos'
+          out-file-path: 'openlist_background_service/darwin'
           extract: true
       - run: flutter pub get
       - run: flutter build macos --debug
