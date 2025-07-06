@@ -114,6 +114,18 @@ class _WebProfilePageState extends State<WebProfilePage> {
                   )));
             }),
         ListTile(
+          //第二个功能项
+            title: Text("DDNS-GO"),
+            leading: Icon(TDIcons.earth, color: Colors.lightGreenAccent),
+            trailing: const Icon(Icons.arrow_right),
+            onTap: () {
+              String url = "http://localhost:9876";
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => WebScreen(
+                    startUrl: url,
+                  )));
+            }),
+        ListTile(
             //第二个功能项
             title: Text("Docs"),
             leading: Icon(TDIcons.book_filled, color: Colors.green),
