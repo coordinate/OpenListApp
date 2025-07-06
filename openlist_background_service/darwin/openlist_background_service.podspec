@@ -19,10 +19,13 @@ For OpenListApp mobile APP background service
   # `../src/*` so that the C sources can be shared among all target platforms.
   s.source           = { :path => '.' }
   s.source_files     = 'Classes/**/*'
-  s.dependency 'FlutterMacOS'
 
-  s.platform = :osx, '10.6'
-  s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES' }
+  s.ios.dependency 'Flutter'
+  s.osx.dependency 'FlutterMacOS'
+  s.ios.deployment_target = '11.0'
+  s.osx.deployment_target = '10.14'
+
+  s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
   s.swift_version = '5.0'
 
 #   s.dependency 'OpenListMobile' , '0.0.2'

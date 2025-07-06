@@ -878,54 +878,54 @@ packages:
     source: hosted
     version: "2.1.0"
   openlist_api:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
       path: openlist_api
       relative: true
     source: path
     version: "1.0.0"
   openlist_background_service:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
       path: openlist_background_service
       relative: true
     source: path
-    version: "0.0.2"
+    version: "1.0.0"
   openlist_config:
     dependency: "direct main"
     description:
       path: openlist_config
       relative: true
     source: path
-    version: "0.0.1+1"
+    version: "1.0.0"
   openlist_global:
     dependency: "direct main"
     description:
       path: openlist_global
       relative: true
     source: path
-    version: "0.0.2+1"
+    version: "1.0.0"
   openlist_native_ui:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
       path: openlist_native_ui
       relative: true
     source: path
-    version: "0.0.1"
+    version: "1.0.0"
   openlist_utils:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
       path: openlist_utils
       relative: true
     source: path
-    version: "0.0.1+1"
+    version: "1.0.0"
   openlist_web_ui:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
       path: openlist_web_ui
       relative: true
     source: path
-    version: "0.0.1"
+    version: "1.0.0+1"
   package_config:
     dependency: transitive
     description:

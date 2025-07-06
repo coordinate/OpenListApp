@@ -1,6 +1,6 @@
 name: openlist_native_ui
 description: "A new Flutter openlist native ui project."
-version: 0.0.1
+version: 1.0.0
 homepage: https://github.com/OpenListApp
 repository: https://github.com/OpenListApp/openlist_native_ui
 
@@ -17,14 +17,8 @@ dependencies:
   shared_preferences: ^2.1.1
   intl: '>=0.19.0 <= 1.0.0'
   openlist_config:
-    path: ../openlist_config
   openlist_api:
-    path: ../openlist_api
   openlist_utils:
-    path: ../openlist_utils
-#  openlist_background_service: ^0.0.1
-#  openlist_config: ^0.0.1
-  #  flutter_inappwebview: ^6.1.5
   get: ^4.7.2
   url_launcher: ^6.1.11
   path_provider: ^2.1.5

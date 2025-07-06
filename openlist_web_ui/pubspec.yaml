@@ -1,6 +1,7 @@
 name: openlist_web_ui
 description: "A new Flutter openlist web ui project."
-version: 0.0.1
+version: 1.0.0+1
+homepage: https://github.com/OpenListApp/OpenListApp
 
 environment:
   sdk: ^3.7.2
@@ -28,15 +29,9 @@ dependencies:
   #  gtads_ylh: ^1.5.0
   intl: '>=0.19.0 <= 1.0.0'
   openlist_config:
-    path: ../openlist_config
   openlist_api:
-    path: ../openlist_api
   openlist_utils:
-    path: ../openlist_utils
-  openlist_global:
-    path: ../openlist_global
-#  openlist_background_service: ^0.0.1
-#  openlist_config: ^0.0.1
+  openlist_global: any
   flutter_inappwebview: ^6.1.5
   get: ^4.7.2
   url_launcher: ^6.1.11

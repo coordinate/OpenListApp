@@ -1,7 +1,7 @@
 name: openlist_utils
 description: "OpenListApp utils"
-version: 0.0.1+1
-homepage:
+version: 1.0.0
+homepage: https://github.com/OpenListApp/OpenListApp
 
 environment:
   sdk: ^3.7.2
@@ -18,11 +18,8 @@ dependencies:
   shared_preferences: ^2.5.3
   tdesign_flutter: ^0.2.0
   openlist_config:
-    path: ../openlist_config
   openlist_background_service:
-    path: ../openlist_background_service
   openlist_api:
-    path: ../openlist_api
   flutter_foreground_task: ^9.1.0
 
 dev_dependencies:

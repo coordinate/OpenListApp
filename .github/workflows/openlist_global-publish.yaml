@@ -1,12 +1,12 @@
-name: location publish
+name: openlist_global publish
 
 on:
   push:
-    tags: ["publish-libs-v*"]
+    tags: ["openlist_global-v*"]
 
 jobs:
   publish:
-    name: Publish on pub.dev
+    name: Publish openlist_global on pub.dev
     runs-on: ubuntu-latest
 
     permissions:
@@ -33,4 +33,4 @@ jobs:
         id: pub_release
         uses: leancodepl/mobile-tools/.github/actions/pub-release@pub-release-v1
         with:
-          path: packages/location
+          path: openlist_global
