@@ -55,6 +55,7 @@ jobs:
         with:
           files: |
             ./build/app/outputs/flutter-apk/*.apk
+            openlist_background_service/android/libs/mobile.aar
           # body_path: ./.github/doc/DownloadDescription.md
       - run: flutter build appbundle --release
       - name: Release AAB
@@ -85,17 +86,21 @@ jobs:
           repository: 'OpenListApp/OpenListLib'
           latest: true
           fileName: 'OpenListMobile.xcframework.zip'
-          out-file-path: 'openlist_background_service/ios'
+          out-file-path: 'openlist_background_service/darwin'
           extract: true
       - run: flutter pub get
       - run: flutter build ipa  --release --no-codesign
       - run: zip -r ios-release.zip ./build/ios/archive
+      - run: |
+          cd openlist_background_service/darwin
+          zip -r OpenListMobile.xcframework.zip OpenListMobile.xcframework
       - name: Release iOS IPA
         uses: softprops/action-gh-release@v2
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: |
             ios-release.zip
+            openlist_background_service/darwin/OpenListMobile.xcframework.zip
           # body_path: ./.github/doc/DownloadDescription.md
 
   linux:
@@ -132,6 +137,7 @@ jobs:
         with:
           files: |
             linux-release.zip
+            openlist_background_service/linux/libs/libmobile.so
           # body_path: ./.github/doc/DownloadDescription.md
       - name: Install flutter_distributor
         run: |
@@ -235,6 +241,7 @@ jobs:
         with:
           files: |
             windows-release.zip
+            openlist_background_service/windows/libs/mobile.dll
           # body_path: ./.github/doc/DownloadDescription.md
       - run: dart run msix:create
       - name: Release windows msix
