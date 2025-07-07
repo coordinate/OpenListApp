@@ -1,0 +1,180 @@
+import 'dart:async';
+import 'dart:io';
+
+import 'package:dio/dio.dart';
+import 'package:flutter/material.dart';
+import 'package:openiothub_api/openiothub_api.dart';
+import 'package:openiothub_grpc_api/proto/manager/publicApi.pb.dart';
+import 'package:openlist_api/openlist_api.dart';
+import 'package:openlist_config/config/config.dart';
+import 'package:openlist_utils/toast.dart';
+import 'package:qr_flutter/qr_flutter.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:tdesign_flutter/tdesign_flutter.dart';
+
+final String Gateway_Jwt_KEY = "GATEWAY_JWT_KEY";
+final String QR_Code_For_Mobile_Add_KEY = "QR_Code_For_Mobile_Add";
+
+class GatewayQrPage extends StatefulWidget {
+  const GatewayQrPage({super.key});
+
+  @override
+  State<GatewayQrPage> createState() => _GatewayQrPageState();
+}
+
+class _GatewayQrPageState extends State<GatewayQrPage> {
+  String qRCodeForMobileAdd = "";
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("gateway-go"), actions: <Widget>[]),
+      body: Container(
+        padding: const EdgeInsets.fromLTRB(0, 50, 0, 0),
+        child: ListView(
+          children: [
+            Center(
+              child:
+                  qRCodeForMobileAdd.isNotEmpty
+                      ? QrImageView(
+                        data: qRCodeForMobileAdd,
+                        version: QrVersions.auto,
+                        size: 320,
+                        backgroundColor: Colors.white,
+                        // backgroundColor: Colors.orangeAccent,
+                        eyeStyle: const QrEyeStyle(
+                          eyeShape: QrEyeShape.square,
+                          color: Colors.deepOrangeAccent,
+                        ),
+                        dataModuleStyle: const QrDataModuleStyle(
+                          dataModuleShape: QrDataModuleShape.square,
+                          color: Colors.black,
+                        ),
+                      )
+                      : TDButton(
+                        icon: Icons.start,
+                        text: "Start service",
+                        size: TDButtonSize.small,
+                        type: TDButtonType.outline,
+                        shape: TDButtonShape.rectangle,
+                        theme: TDButtonTheme.danger,
+                        onTap: () {
+                          _generateJwtQRCodePair(false);
+                        },
+                      ),
+            ),
+            Center(
+              child: Padding(
+                padding: EdgeInsets.fromLTRB(0, 40, 0, 0),
+                child: Text("使用云亿连(OpenIoTHub)扫码上述二维码访问本软件"),
+              ),
+            ),
+            Center(
+              child: Padding(
+                padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
+                child: TextButton(
+                  child: Text("change gateway id"),
+                  onPressed: () {
+                    if (qRCodeForMobileAdd.isNotEmpty){
+                      _generateJwtQRCodePair(true);
+                    }else{
+                      show_info("Please start service first", context);
+                    }
+                  },
+                ),
+              ),
+            ),
+            Center(
+              child: Padding(
+                padding: EdgeInsets.fromLTRB(0, 15, 0, 0),
+                child: TDButton(
+                  icon: TDIcons.backward,
+                  text: "Back",
+                  size: TDButtonSize.small,
+                  type: TDButtonType.outline,
+                  shape: TDButtonShape.rectangle,
+                  theme: TDButtonTheme.primary,
+                  onTap: () {
+                    Navigator.of(context).pop();
+                  },
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Future<void> _generateJwtQRCodePair(bool is_change_gateway_uuid) async {
+    // TODO 先检查本地存储有没有保存的网关配置，如果有则使用旧的启动
+    // 检查服务是否已经启动，没有启动则启动
+    await waitGatewayGoService();
+
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+
+    if (prefs.containsKey(Gateway_Jwt_KEY) &&
+        prefs.containsKey(QR_Code_For_Mobile_Add_KEY) &&
+        !is_change_gateway_uuid) {
+      var gatewayJwt = prefs.getString(Gateway_Jwt_KEY)!;
+      setState(() {
+        qRCodeForMobileAdd = prefs.getString(QR_Code_For_Mobile_Add_KEY)!;
+      });
+      await GatewayLoginManager.LoginServerByToken(
+        gatewayJwt,
+        "127.0.0.1",
+        55443,
+      );
+    } else {
+      JwtQRCodePair? jwtQRCodePair = await PublicApi.GenerateJwtQRCodePair();
+      setState(() {
+        qRCodeForMobileAdd = jwtQRCodePair.qRCodeForMobileAdd;
+      });
+      // TODO 保存网关(网格ID)到本地存储，当前刷新二维码的时候清楚前面的存储保存最新的网关配置
+      prefs.setString(Gateway_Jwt_KEY, jwtQRCodePair.gatewayJwt);
+      prefs.setString(
+        QR_Code_For_Mobile_Add_KEY,
+        jwtQRCodePair.qRCodeForMobileAdd,
+      );
+      await GatewayLoginManager.LoginServerByToken(
+        jwtQRCodePair.gatewayJwt,
+        "127.0.0.1",
+        55443,
+      );
+    }
+  }
+
+  Future<void> waitGatewayGoService() async {
+    final dio = Dio(BaseOptions(baseUrl: "http://localhost:34323"));
+    String reqUri = "/";
+    var backgrounService = BackgrounService(AListWebAPIBaseUrl);
+      try {
+        final response = await dio.getUri(
+          Uri.parse(reqUri),
+          options: Options(
+            sendTimeout: Duration(milliseconds: 100),
+            receiveTimeout: Duration(milliseconds: 100),
+          ),
+        );
+        if (response.statusCode == 200) {
+          return;
+        } else {
+          backgrounService.startGatewayGo();
+          return;
+        }
+      } catch (e) {
+        backgrounService.startGatewayGo();
+        return;
+      }
+    }
+}

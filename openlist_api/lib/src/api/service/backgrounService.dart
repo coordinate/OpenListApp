@@ -45,6 +45,28 @@ class BackgrounService {
     }
   }
 
+  Future<void> startDdnsGo() async {
+    final dio = getDIO(baseUrl);
+    String reqUri = "/start-ddns-go";
+    final response = await dio.getUri(Uri.parse(reqUri));
+    if (response.statusCode == 200) {
+      print("startDdnsGo,ok");
+    } else {
+      print("startDdnsGo,failed");
+    }
+  }
+
+  Future<void> startGatewayGo() async {
+    final dio = getDIO(baseUrl);
+    String reqUri = "/start-gateway-go";
+    final response = await dio.getUri(Uri.parse(reqUri));
+    if (response.statusCode == 200) {
+      print("startGatewayGo,ok");
+    } else {
+      print("startGatewayGo,failed");
+    }
+  }
+
   Future<void> setAdminPassword(String password) async {
     final dio = getDIO(baseUrl);
     String reqUri = "/set-admin-password";
