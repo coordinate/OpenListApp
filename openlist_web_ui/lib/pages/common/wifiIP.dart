@@ -52,6 +52,10 @@ class _WiFiIPPageState extends State<WiFiIPPage> {
                       ),
                     ),
                     Text(
+                      "http://${wifiIP!}:5244",
+                      style: TextStyle(color: Colors.grey),
+                    ),
+                    Text(
                       "Scan the above QR code on the same LAN to access this software",
                       style: TextStyle(color: Colors.grey),
                     ),
