@@ -4,6 +4,7 @@ class Assets {
 
   static const String androidFiles = 'assets/images/android/files.png';
   static const String assetsREADME = 'assets/README.md';
+  static const String contactQQGroup = 'assets/images/contact/QQGroup.jpg';
   static const String filesAvatar = 'assets/files/avatar.png';
   static const String filesFile = 'assets/files/file.png';
   static const String filesFolder = 'assets/files/folder.png';

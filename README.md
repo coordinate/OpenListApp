@@ -7,6 +7,9 @@
 
 ### 通过CI构建，本项目不提供api服务器，服务器由上游OpenList等社区提供
 ### 项目提供两套UI，一套是原先的Web界面直接加载，另一套是目前已经开发完核心功能的原生界面，目前默认Linux使用原生界面其他都使用Web界面
+
+### QQ群:251405953
+![QQGroup.jpg](assets/images/contact/QQGroup.jpg)
 ### 项目结构
 * [openlist](/lib/main.dart)APP入口项目
 * [openlist_api](/openlist_api)核心api封装
