@@ -127,6 +127,7 @@ class _WebProfilePageState extends State<WebProfilePage> {
                     startUrl: url,
                   )));
             }),
+        // 集成GATEWAY-GO
         ListTile(
           //第二个功能项
             title: Text("GATEWAY-GO"),

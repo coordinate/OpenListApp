@@ -28,6 +28,8 @@ class _SystemPageState extends State<SystemPage> {
     _result.add("AListWebAPIBaseUrl: $AListWebAPIBaseUrl");
     _result.add("AListAPIBaseUrl: $AListAPIBaseUrl");
     _result.add("WebPageBaseUrl: $WebPageBaseUrl");
+    _result.add("DDNS-GO Url: http://localhost:9876");
+    _result.add("GATEWAY-GO Url: http://localhost:34323");
 
     final tiles = _result.map(
       (pair) {

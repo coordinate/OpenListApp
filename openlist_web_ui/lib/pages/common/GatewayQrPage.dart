@@ -120,6 +120,7 @@ class _GatewayQrPageState extends State<GatewayQrPage> {
     // TODO 先检查本地存储有没有保存的网关配置，如果有则使用旧的启动
     // 检查服务是否已经启动，没有启动则启动
     await waitGatewayGoService();
+    await Future.delayed(Duration(milliseconds: 400));
 
     SharedPreferences prefs = await SharedPreferences.getInstance();
 
