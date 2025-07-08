@@ -47,7 +47,7 @@ class _SystemPageState extends State<SystemPage> {
     ).toList();
 
     return Scaffold(
-      appBar: AppBar(title: Text(OpenListWebUiLocalizations.of(context).app_info), actions: <Widget>[
+      appBar: AppBar(title: Text("System"), actions: <Widget>[
       ]),
       body: ListView(children: divided),
     );

@@ -17,6 +17,7 @@ import 'package:openlist_web_ui/pages/common/appInfo.dart';
 import 'package:openlist_web_ui/pages/common/system.dart';
 
 import '../common/GatewayQrPage.dart';
+import '../common/wifiIP.dart';
 
 class WebProfilePage extends StatefulWidget {
   const WebProfilePage({super.key});
@@ -114,6 +115,15 @@ class _WebProfilePageState extends State<WebProfilePage> {
                   builder: (context) => WebScreen(
                     startUrl: url,
                   )));
+            }),
+        ListTile(
+          //第二个功能项
+            title: Text("WiFi IP"),
+            leading: Icon(TDIcons.earth, color: Colors.lime),
+            trailing: const Icon(Icons.arrow_right),
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => WiFiIPPage()));
             }),
         ListTile(
           //第二个功能项
