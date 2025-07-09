@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:openlist_config/config/config.dart';
-import 'package:openlist_web_ui/l10n/generated/openlist_web_ui_localizations.dart';
 import 'package:network_info_plus/network_info_plus.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 

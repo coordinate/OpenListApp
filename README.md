@@ -21,3 +21,7 @@
 * [openlist_web_ui](/openlist_web_ui)web界面代码(目前默认使用)
 
 ![files](assets/images/android/files.png) ![storages](assets/images/macos/storages.png) ![files](assets/images/macos/files.png) ![storages](assets/images/ios/storages.png) ![files](assets/images/ios/files.png) ![storages](assets/images/windows/storages.png)
+
+### 注意事项：
+* 初始用户遵从上游默认权限，代表着默认webdav不开启，请注意
+* 其他
