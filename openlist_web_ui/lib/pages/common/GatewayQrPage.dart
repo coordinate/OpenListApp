@@ -11,6 +11,9 @@ import 'package:openlist_utils/toast.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tdesign_flutter/tdesign_flutter.dart';
+import 'package:url_launcher/url_launcher_string.dart';
+
+import '../../l10n/generated/openlist_web_ui_localizations.dart';
 
 final String Gateway_Jwt_KEY = "GATEWAY_JWT_KEY";
 final String QR_Code_For_Mobile_Add_KEY = "QR_Code_For_Mobile_Add";
@@ -98,14 +101,35 @@ class _GatewayQrPageState extends State<GatewayQrPage> {
               child: Padding(
                 padding: EdgeInsets.fromLTRB(0, 15, 0, 0),
                 child: TDButton(
-                  icon: TDIcons.backward,
-                  text: "Back",
+                  icon: TDIcons.install,
+                  text: "install_openiothub",
                   size: TDButtonSize.small,
                   type: TDButtonType.outline,
                   shape: TDButtonShape.rectangle,
                   theme: TDButtonTheme.primary,
                   onTap: () {
-                    Navigator.of(context).pop();
+                    print(OpenListWebUiLocalizations.of(context).localeName);
+                    if (OpenListWebUiLocalizations.of(context).localeName.contains("zh")){
+                      _showUrlQr("https://m.malink.cn/s/RNzqia");
+                    }else{
+                      _showUrlQr("https://play.google.com/store/apps/details?id=com.iotserv.openiothub");
+                    }
+                  },
+                ),
+              ),
+            ),
+            Center(
+              child: Padding(
+                padding: EdgeInsets.fromLTRB(0, 15, 0, 0),
+                child: TDButton(
+                  icon: TDIcons.logo_github,
+                  text: "install_openiothub_from_github",
+                  size: TDButtonSize.small,
+                  type: TDButtonType.outline,
+                  shape: TDButtonShape.rectangle,
+                  theme: TDButtonTheme.primary,
+                  onTap: () {
+                    _showUrlQr("https://github.com/OpenIoTHub/OpenIoTHub/releases");
                   },
                 ),
               ),
@@ -114,6 +138,54 @@ class _GatewayQrPageState extends State<GatewayQrPage> {
         ),
       ),
     );
+  }
+
+  Future<void> _showUrlQr(String url) async {
+    await showDialog(
+        context: context,
+        builder: (_) => AlertDialog(
+            title: Text("install_openiothub"),
+            scrollable: true,
+            content: SizedBox(
+                height: 500,
+                child: ListView(
+                  children: <Widget>[
+                    QrImageView(
+                      data: url,
+                      version: QrVersions.auto,
+                      size: 320,
+                      backgroundColor: Colors.white,
+                      // backgroundColor: Colors.orangeAccent,
+                      eyeStyle: const QrEyeStyle(
+                        eyeShape: QrEyeShape.square,
+                        color: Colors.deepOrangeAccent,
+                      ),
+                      dataModuleStyle: const QrDataModuleStyle(
+                        dataModuleShape: QrDataModuleShape.square,
+                        color: Colors.black,
+                      ),
+                    )
+                  ],
+                )),
+            actions: <Widget>[
+              TextButton(
+                child: Text(
+                    "open_url",
+                    style: TextStyle(color: Colors.grey)),
+                onPressed: () async {
+                  Navigator.of(context).pop();
+                  launchUrlString(url);
+                },
+              ),
+              TextButton(
+                child: Text(
+                    "ok",
+                    style: TextStyle(color: Colors.grey)),
+                onPressed: () async {
+                  Navigator.of(context).pop();
+                },
+              )
+            ]));
   }
 
   Future<void> _generateJwtQRCodePair(bool is_change_gateway_uuid) async {
