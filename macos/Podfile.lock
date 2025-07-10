@@ -7,6 +7,8 @@ PODS:
     - FlutterMacOS
     - OrderedSet (~> 6.0.3)
   - FlutterMacOS (1.0.0)
+  - network_info_plus (0.0.1):
+    - FlutterMacOS
   - openlist_background_service (0.0.1):
     - Flutter
     - FlutterMacOS
@@ -37,6 +39,7 @@ DEPENDENCIES:
   - file_selector_macos (from `Flutter/ephemeral/.symlinks/plugins/file_selector_macos/macos`)
   - flutter_inappwebview_macos (from `Flutter/ephemeral/.symlinks/plugins/flutter_inappwebview_macos/macos`)
   - FlutterMacOS (from `Flutter/ephemeral`)
+  - network_info_plus (from `Flutter/ephemeral/.symlinks/plugins/network_info_plus/macos`)
   - openlist_background_service (from `Flutter/ephemeral/.symlinks/plugins/openlist_background_service/darwin`)
   - package_info_plus (from `Flutter/ephemeral/.symlinks/plugins/package_info_plus/macos`)
   - path_provider_foundation (from `Flutter/ephemeral/.symlinks/plugins/path_provider_foundation/darwin`)
@@ -60,6 +63,8 @@ EXTERNAL SOURCES:
     :path: Flutter/ephemeral/.symlinks/plugins/flutter_inappwebview_macos/macos
   FlutterMacOS:
     :path: Flutter/ephemeral
+  network_info_plus:
+    :path: Flutter/ephemeral/.symlinks/plugins/network_info_plus/macos
   openlist_background_service:
     :path: Flutter/ephemeral/.symlinks/plugins/openlist_background_service/darwin
   package_info_plus:
@@ -80,20 +85,21 @@ EXTERNAL SOURCES:
     :path: Flutter/ephemeral/.symlinks/plugins/window_manager/macos
 
 SPEC CHECKSUMS:
-  file_picker: e716a70a9fe5fd9e09ebc922d7541464289443af
-  file_selector_macos: cc3858c981fe6889f364731200d6232dac1d812d
-  flutter_inappwebview_macos: bdf207b8f4ebd58e86ae06cd96b147de99a67c9b
+  file_picker: 7584aae6fa07a041af2b36a2655122d42f578c1a
+  file_selector_macos: 6280b52b459ae6c590af5d78fc35c7267a3c4b31
+  flutter_inappwebview_macos: c2d68649f9f8f1831bfcd98d73fd6256366d9d1d
   FlutterMacOS: 8f6f14fa908a6fb3fba0cd85dbd81ec4b251fb24
-  openlist_background_service: c7d58034eb2e51eb6cb55b1a20f1f329a4bdc513
+  network_info_plus: 21d1cd6a015ccb2fdff06a1fbfa88d54b4e92f61
+  openlist_background_service: 43f26e97b8132eb0d3a2f1aaec2158bc21113c8f
   OrderedSet: e539b66b644ff081c73a262d24ad552a69be3a94
-  package_info_plus: 12f1c5c2cfe8727ca46cbd0b26677728972d9a5b
-  path_provider_foundation: 2b6b4c569c0fb62ec74538f866245ac84301af46
-  screen_retriever_macos: 776e0fa5d42c6163d2bf772d22478df4b302b161
-  shared_preferences_foundation: fcdcbc04712aee1108ac7fda236f363274528f78
-  sqflite_darwin: 5a7236e3b501866c1c9befc6771dfd73ffb8702d
-  url_launcher_macos: c82c93949963e55b228a30115bd219499a6fe404
-  video_player_avfoundation: 7c6c11d8470e1675df7397027218274b6d2360b3
-  window_manager: e25faf20d88283a0d46e7b1a759d07261ca27575
+  package_info_plus: f0052d280d17aa382b932f399edf32507174e870
+  path_provider_foundation: 080d55be775b7414fd5a5ef3ac137b97b097e564
+  screen_retriever_macos: 452e51764a9e1cdb74b3c541238795849f21557f
+  shared_preferences_foundation: 9e1978ff2562383bd5676f64ec4e9aa8fa06a6f7
+  sqflite_darwin: 20b2a3a3b70e43edae938624ce550a3cbf66a3d0
+  url_launcher_macos: 0fba8ddabfc33ce0a9afe7c5fef5aab3d8d2d673
+  video_player_avfoundation: 2cef49524dd1f16c5300b9cd6efd9611ce03639b
+  window_manager: b729e31d38fb04905235df9ea896128991cad99e
 
 PODFILE CHECKSUM: 7eb978b976557c8c1cd717d8185ec483fd090a82
 

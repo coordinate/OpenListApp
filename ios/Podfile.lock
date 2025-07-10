@@ -47,6 +47,8 @@ PODS:
     - Flutter
   - native_flutter_downloader (0.0.1):
     - Flutter
+  - network_info_plus (0.0.1):
+    - Flutter
   - openlist_background_service (0.0.1):
     - Flutter
     - FlutterMacOS
@@ -81,6 +83,7 @@ DEPENDENCIES:
   - flutter_inappwebview_ios (from `.symlinks/plugins/flutter_inappwebview_ios/ios`)
   - image_picker_ios (from `.symlinks/plugins/image_picker_ios/ios`)
   - native_flutter_downloader (from `.symlinks/plugins/native_flutter_downloader/ios`)
+  - network_info_plus (from `.symlinks/plugins/network_info_plus/ios`)
   - openlist_background_service (from `.symlinks/plugins/openlist_background_service/darwin`)
   - package_info_plus (from `.symlinks/plugins/package_info_plus/ios`)
   - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/darwin`)
@@ -111,6 +114,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/image_picker_ios/ios"
   native_flutter_downloader:
     :path: ".symlinks/plugins/native_flutter_downloader/ios"
+  network_info_plus:
+    :path: ".symlinks/plugins/network_info_plus/ios"
   openlist_background_service:
     :path: ".symlinks/plugins/openlist_background_service/darwin"
   package_info_plus:
@@ -137,6 +142,7 @@ SPEC CHECKSUMS:
   flutter_inappwebview_ios: b89ba3482b96fb25e00c967aae065701b66e9b99
   image_picker_ios: 7fe1ff8e34c1790d6fff70a32484959f563a928a
   native_flutter_downloader: 13d6a37f02eeafe98aa8416a083e3e47f7ec0c74
+  network_info_plus: cf61925ab5205dce05a4f0895989afdb6aade5fc
   openlist_background_service: 43f26e97b8132eb0d3a2f1aaec2158bc21113c8f
   OrderedSet: e539b66b644ff081c73a262d24ad552a69be3a94
   package_info_plus: af8e2ca6888548050f16fa2f1938db7b5a5df499
