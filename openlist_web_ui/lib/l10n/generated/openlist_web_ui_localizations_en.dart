@@ -79,4 +79,62 @@ class OpenListWebUiLocalizationsEn extends OpenListWebUiLocalizations {
 
   @override
   String get copiedToClipboard => 'Copied To Clipboard';
+
+  @override
+  String get storages => 'Storages';
+
+  @override
+  String get tasks => 'Tasks';
+
+  @override
+  String get files => 'Files';
+
+  @override
+  String get me => 'Me';
+
+  @override
+  String get system => 'System';
+
+  @override
+  String get settings => 'Settings';
+
+  @override
+  String get ddns_go => 'ddns-go(Public IP remote access)';
+
+  @override
+  String get gateway_go => 'gateway-go(No public IP remote access)';
+
+  @override
+  String get docs => 'Docs';
+
+  @override
+  String get bilibili => 'BiliBili';
+
+  @override
+  String get favorites => 'Favorites';
+
+  @override
+  String get about => 'About';
+
+  @override
+  String get storage_permission => 'Request storage permission';
+
+  @override
+  String get start_service => 'Start Service(No public IP remote access)';
+
+  @override
+  String get please_scan =>
+      'Use OpenIoTHub to scan the QR code above to access this software';
+
+  @override
+  String get change_gateway_id => 'Change gateway ID';
+
+  @override
+  String get install_openiothub => 'Install OpenIoTHub';
+
+  @override
+  String get install_openiothub_from_github => 'Install OpenIoTHub from Github';
+
+  @override
+  String get open_url => 'Open Url';
 }

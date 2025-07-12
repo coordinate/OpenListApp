@@ -248,6 +248,120 @@ abstract class OpenListWebUiLocalizations {
   /// In en, this message translates to:
   /// **'Copied To Clipboard'**
   String get copiedToClipboard;
+
+  /// No description provided for @storages.
+  ///
+  /// In en, this message translates to:
+  /// **'Storages'**
+  String get storages;
+
+  /// No description provided for @tasks.
+  ///
+  /// In en, this message translates to:
+  /// **'Tasks'**
+  String get tasks;
+
+  /// No description provided for @files.
+  ///
+  /// In en, this message translates to:
+  /// **'Files'**
+  String get files;
+
+  /// No description provided for @me.
+  ///
+  /// In en, this message translates to:
+  /// **'Me'**
+  String get me;
+
+  /// No description provided for @system.
+  ///
+  /// In en, this message translates to:
+  /// **'System'**
+  String get system;
+
+  /// No description provided for @settings.
+  ///
+  /// In en, this message translates to:
+  /// **'Settings'**
+  String get settings;
+
+  /// No description provided for @ddns_go.
+  ///
+  /// In en, this message translates to:
+  /// **'ddns-go(Public IP remote access)'**
+  String get ddns_go;
+
+  /// No description provided for @gateway_go.
+  ///
+  /// In en, this message translates to:
+  /// **'gateway-go(No public IP remote access)'**
+  String get gateway_go;
+
+  /// No description provided for @docs.
+  ///
+  /// In en, this message translates to:
+  /// **'Docs'**
+  String get docs;
+
+  /// No description provided for @bilibili.
+  ///
+  /// In en, this message translates to:
+  /// **'BiliBili'**
+  String get bilibili;
+
+  /// No description provided for @favorites.
+  ///
+  /// In en, this message translates to:
+  /// **'Favorites'**
+  String get favorites;
+
+  /// No description provided for @about.
+  ///
+  /// In en, this message translates to:
+  /// **'About'**
+  String get about;
+
+  /// No description provided for @storage_permission.
+  ///
+  /// In en, this message translates to:
+  /// **'Request storage permission'**
+  String get storage_permission;
+
+  /// No description provided for @start_service.
+  ///
+  /// In en, this message translates to:
+  /// **'Start Service(No public IP remote access)'**
+  String get start_service;
+
+  /// No description provided for @please_scan.
+  ///
+  /// In en, this message translates to:
+  /// **'Use OpenIoTHub to scan the QR code above to access this software'**
+  String get please_scan;
+
+  /// No description provided for @change_gateway_id.
+  ///
+  /// In en, this message translates to:
+  /// **'Change gateway ID'**
+  String get change_gateway_id;
+
+  /// No description provided for @install_openiothub.
+  ///
+  /// In en, this message translates to:
+  /// **'Install OpenIoTHub'**
+  String get install_openiothub;
+
+  /// No description provided for @install_openiothub_from_github.
+  ///
+  /// In en, this message translates to:
+  /// **'Install OpenIoTHub from Github'**
+  String get install_openiothub_from_github;
+
+  /// No description provided for @open_url.
+  ///
+  /// In en, this message translates to:
+  /// **'Open Url'**
+  String get open_url;
 }
 
 class _OpenListWebUiLocalizationsDelegate

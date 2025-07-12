@@ -39,5 +39,27 @@
 
   "downloadThisFile": "下載這個文件",
   "download": "下載",
-  "copiedToClipboard": "拷貝到剪切板"
+  "copiedToClipboard": "拷貝到剪切板",
+
+  "storages": "存儲",
+  "tasks": "任務",
+  "files": "文件",
+  "me": "我",
+
+  "system": "系統",
+  "settings": "設置",
+  "ddns_go": "ddns-go(公網IP遠程訪問)",
+  "gateway_go": "gateway-go(沒有公網IP遠程訪問)",
+  "docs": "文檔",
+  "bilibili": "嗶哩嗶哩",
+  "favorites": "收藏",
+  "about": "關於",
+  "storage_permission": "請求存儲權限(進映射本機存儲需要)",
+
+  "start_service": "開啟服務(沒有公網IP遠程訪問)",
+  "please_scan": "使用雲億連(OpenIoTHub)掃描上述二維碼訪問本軟件",
+  "change_gateway_id": "更改網關ID",
+  "install_openiothub": "安裝雲億連(OpenIoTHub)",
+  "install_openiothub_from_github": "从GitHub安裝雲億連",
+  "open_url": "打開鏈接"
 }

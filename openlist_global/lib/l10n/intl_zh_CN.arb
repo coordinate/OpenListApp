@@ -1,3 +1,6 @@
 {
-  "app_title": "OpenList"
+  "app_title": "OpenList",
+  "username": "用户名",
+  "password": "密码",
+  "login": "登录"
 }

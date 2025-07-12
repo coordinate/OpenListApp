@@ -14,6 +14,7 @@ import 'package:tdesign_flutter/tdesign_flutter.dart';
 
 import 'package:openlist_web_ui/pages/files/FilesWebPage.dart';
 
+import '../l10n/generated/openlist_web_ui_localizations.dart';
 import 'me/ProfilePage.dart';
 
 class HomePage extends StatefulWidget {
@@ -138,16 +139,16 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
     final List<BottomNavigationBarItem> bottomNavItems = [
       BottomNavigationBarItem(
           icon: const Icon(TDIcons.hard_disk_storage),
-          label: "Storages"),
+          label: OpenListWebUiLocalizations.of(context).storages),
       BottomNavigationBarItem(
           icon: const Icon(TDIcons.task),
-          label: "Tasks"),
+          label: OpenListWebUiLocalizations.of(context).tasks),
       BottomNavigationBarItem(
           icon: const Icon(TDIcons.file),
-          label: "Files"),
+          label: OpenListWebUiLocalizations.of(context).files),
       BottomNavigationBarItem(
           icon: const Icon(TDIcons.user),
-          label: "Me"),
+          label: OpenListWebUiLocalizations.of(context).me),
     ];
     return bottomNavItems;
   }

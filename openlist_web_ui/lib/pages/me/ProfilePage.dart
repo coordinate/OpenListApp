@@ -16,6 +16,7 @@ import 'package:openlist_config/openlist_config.dart';
 import 'package:openlist_web_ui/pages/common/appInfo.dart';
 import 'package:openlist_web_ui/pages/common/system.dart';
 
+import '../../l10n/generated/openlist_web_ui_localizations.dart';
 import '../common/GatewayQrPage.dart';
 import '../common/wifiIP.dart';
 
@@ -96,7 +97,7 @@ class _WebProfilePageState extends State<WebProfilePage> {
       _listTiles = <ListTile>[
         ListTile(
           //第二个功能项
-            title: Text("System"),
+            title: Text(OpenListWebUiLocalizations.of(context).system),
             leading: Icon(TDIcons.system_2, color: Colors.blue),
             trailing: const Icon(Icons.arrow_right),
             onTap: () {
@@ -106,7 +107,7 @@ class _WebProfilePageState extends State<WebProfilePage> {
             }),
         ListTile(
           //第二个功能项
-            title: Text("Settings"),
+            title: Text(OpenListWebUiLocalizations.of(context).settings),
             leading: Icon(TDIcons.setting, color: Colors.orange),
             trailing: const Icon(Icons.arrow_right),
             onTap: () {
@@ -127,7 +128,7 @@ class _WebProfilePageState extends State<WebProfilePage> {
             }),
         ListTile(
           //第二个功能项
-            title: Text("DDNS-GO"),
+            title: Text(OpenListWebUiLocalizations.of(context).ddns_go),
             leading: Icon(TDIcons.earth, color: Colors.lightGreenAccent),
             trailing: const Icon(Icons.arrow_right),
             onTap: () {
@@ -140,7 +141,7 @@ class _WebProfilePageState extends State<WebProfilePage> {
         // 集成GATEWAY-GO
         ListTile(
           //第二个功能项
-            title: Text("GATEWAY-GO"),
+            title: Text(OpenListWebUiLocalizations.of(context).gateway_go),
             leading: Icon(TDIcons.app, color: Colors.limeAccent),
             trailing: const Icon(Icons.arrow_right),
             onTap: () {
@@ -149,7 +150,7 @@ class _WebProfilePageState extends State<WebProfilePage> {
             }),
         ListTile(
             //第二个功能项
-            title: Text("Docs"),
+            title: Text(OpenListWebUiLocalizations.of(context).docs),
             leading: Icon(TDIcons.book_filled, color: Colors.green),
             trailing: const Icon(Icons.arrow_right),
             onTap: () {
@@ -173,7 +174,7 @@ class _WebProfilePageState extends State<WebProfilePage> {
             }),
         ListTile(
           //第二个功能项
-            title: Text("BiliBili"),
+            title: Text(OpenListWebUiLocalizations.of(context).bilibili),
             leading: Icon(TDIcons.video, color: Colors.deepOrange),
             trailing: const Icon(Icons.arrow_right),
             onTap: () {
@@ -185,7 +186,7 @@ class _WebProfilePageState extends State<WebProfilePage> {
             }),
         ListTile(
           //第二个功能项
-            title: Text("Favorites"),
+            title: Text(OpenListWebUiLocalizations.of(context).favorites),
             leading: Icon(Icons.favorite, color: Colors.red),
             trailing: const Icon(Icons.arrow_right),
             onTap: () {
@@ -194,7 +195,7 @@ class _WebProfilePageState extends State<WebProfilePage> {
             }),
         ListTile(
             //第二个功能项
-            title: Text("About"),
+            title: Text(OpenListWebUiLocalizations.of(context).about),
             leading: Icon(TDIcons.info_circle, color: Colors.purple),
             trailing: const Icon(Icons.arrow_right),
             onTap: () {
@@ -209,7 +210,7 @@ class _WebProfilePageState extends State<WebProfilePage> {
         _listTiles.add(
           ListTile(
             //第二个功能项
-            title: Text("请求存储权限(仅映射本机存储需要)"),
+            title: Text(OpenListWebUiLocalizations.of(context).storage_permission),
             leading: Icon(Icons.sd_storage_outlined, color: Colors.red),
             trailing: const Icon(Icons.arrow_right),
             onTap: () {

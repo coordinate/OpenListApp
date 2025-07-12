@@ -66,7 +66,7 @@ class _GatewayQrPageState extends State<GatewayQrPage> {
                       )
                       : TDButton(
                         icon: Icons.start,
-                        text: "Start service",
+                        text: OpenListWebUiLocalizations.of(context).start_service,
                         size: TDButtonSize.small,
                         type: TDButtonType.outline,
                         shape: TDButtonShape.rectangle,
@@ -79,14 +79,14 @@ class _GatewayQrPageState extends State<GatewayQrPage> {
             Center(
               child: Padding(
                 padding: EdgeInsets.fromLTRB(0, 40, 0, 0),
-                child: Text("使用云亿连(OpenIoTHub)扫码上述二维码访问本软件"),
+                child: Text(OpenListWebUiLocalizations.of(context).please_scan),
               ),
             ),
             Center(
               child: Padding(
                 padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
                 child: TextButton(
-                  child: Text("change gateway id"),
+                  child: Text(OpenListWebUiLocalizations.of(context).change_gateway_id),
                   onPressed: () {
                     if (qRCodeForMobileAdd.isNotEmpty){
                       _generateJwtQRCodePair(true);
@@ -102,7 +102,7 @@ class _GatewayQrPageState extends State<GatewayQrPage> {
                 padding: EdgeInsets.fromLTRB(0, 15, 0, 0),
                 child: TDButton(
                   icon: TDIcons.install,
-                  text: "install_openiothub",
+                  text: OpenListWebUiLocalizations.of(context).install_openiothub,
                   size: TDButtonSize.small,
                   type: TDButtonType.outline,
                   shape: TDButtonShape.rectangle,
@@ -123,7 +123,7 @@ class _GatewayQrPageState extends State<GatewayQrPage> {
                 padding: EdgeInsets.fromLTRB(0, 15, 0, 0),
                 child: TDButton(
                   icon: TDIcons.logo_github,
-                  text: "install_openiothub_from_github",
+                  text: OpenListWebUiLocalizations.of(context).install_openiothub_from_github,
                   size: TDButtonSize.small,
                   type: TDButtonType.outline,
                   shape: TDButtonShape.rectangle,
@@ -170,7 +170,7 @@ class _GatewayQrPageState extends State<GatewayQrPage> {
             actions: <Widget>[
               TextButton(
                 child: Text(
-                    "open_url",
+                    OpenListWebUiLocalizations.of(context).open_url,
                     style: TextStyle(color: Colors.grey)),
                 onPressed: () async {
                   Navigator.of(context).pop();
@@ -179,7 +179,7 @@ class _GatewayQrPageState extends State<GatewayQrPage> {
               ),
               TextButton(
                 child: Text(
-                    "ok",
+                    OpenListWebUiLocalizations.of(context).ok,
                     style: TextStyle(color: Colors.grey)),
                 onPressed: () async {
                   Navigator.of(context).pop();

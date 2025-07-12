@@ -10,6 +10,15 @@ class OpenListGlobalLocalizationsZh extends OpenListGlobalLocalizations {
 
   @override
   String get app_title => 'OpenList';
+
+  @override
+  String get username => '用户名';
+
+  @override
+  String get password => '密码';
+
+  @override
+  String get login => '登录';
 }
 
 /// The translations for Chinese, as used in China (`zh_CN`).
@@ -18,6 +27,15 @@ class OpenListGlobalLocalizationsZhCn extends OpenListGlobalLocalizationsZh {
 
   @override
   String get app_title => 'OpenList';
+
+  @override
+  String get username => '用户名';
+
+  @override
+  String get password => '密码';
+
+  @override
+  String get login => '登录';
 }
 
 /// The translations for Chinese, using the Han script (`zh_Hans`).
@@ -26,6 +44,15 @@ class OpenListGlobalLocalizationsZhHans extends OpenListGlobalLocalizationsZh {
 
   @override
   String get app_title => 'OpenList';
+
+  @override
+  String get username => '用户名';
+
+  @override
+  String get password => '密码';
+
+  @override
+  String get login => '登录';
 }
 
 /// The translations for Chinese, using the Han script (`zh_Hant`).
@@ -34,6 +61,15 @@ class OpenListGlobalLocalizationsZhHant extends OpenListGlobalLocalizationsZh {
 
   @override
   String get app_title => 'OpenList';
+
+  @override
+  String get username => '用戶名';
+
+  @override
+  String get password => '密碼';
+
+  @override
+  String get login => '登錄';
 }
 
 /// The translations for Chinese, as used in Taiwan (`zh_TW`).
@@ -42,4 +78,13 @@ class OpenListGlobalLocalizationsZhTw extends OpenListGlobalLocalizationsZh {
 
   @override
   String get app_title => 'OpenList';
+
+  @override
+  String get username => '用戶名';
+
+  @override
+  String get password => '密碼';
+
+  @override
+  String get login => '登錄';
 }

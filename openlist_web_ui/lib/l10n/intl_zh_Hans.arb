@@ -33,5 +33,27 @@
 
   "downloadThisFile": "下载这个文件",
   "download": "下载",
-  "copiedToClipboard": "拷贝到剪切板"
+  "copiedToClipboard": "拷贝到剪切板",
+
+  "storages": "存储",
+  "tasks": "任务",
+  "files": "文件",
+  "me": "我",
+
+  "system": "系统",
+  "settings": "设置",
+  "ddns_go": "ddns-go(公网IP远程访问)",
+  "gateway_go": "gateway-go(没有公网IP远程访问)",
+  "docs": "文档",
+  "bilibili": "哔哩哔哩",
+  "favorites": "收藏",
+  "about": "关于",
+  "storage_permission": "请求存储权限(仅映射本机存储需要)",
+
+  "start_service": "开启服务(没有公网IP远程访问)",
+  "please_scan": "使用云亿连(OpenIoTHub)扫码上述二维码访问本软件",
+  "change_gateway_id": "更改网关ID",
+  "install_openiothub": "安裝云亿连",
+  "install_openiothub_from_github": "从GitHub安装云亿连",
+  "open_url": "打开链接"
 }

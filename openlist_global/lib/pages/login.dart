@@ -4,11 +4,9 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:openlist_api/openlist_api.dart';
 import 'package:openlist_config/config/config.dart';
 import 'package:openlist_config/config/global.dart';
-import 'package:openlist_utils/init.dart';
-import '../l10n/generated/openlist_global_ui_localizations.dart';
+import '../l10n/generated/openlist_global_localizations.dart';
 import 'package:openlist_utils/toast.dart';
 import 'package:tdesign_flutter/tdesign_flutter.dart';
 import 'package:openlist_utils/init.dart' as init;
@@ -26,7 +24,6 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  OpenListGlobalUiLocalizations? localizations;
   List<Widget> _list = <Widget>[TDLoading(
     size: TDLoadingSize.small,
     icon: TDLoadingIcon.activity,
@@ -82,7 +79,7 @@ class _LoginPageState extends State<LoginPage> {
           child: TDInput(
             controller: _username,
             backgroundColor: Colors.white,
-            leftLabel: "Username",
+            leftLabel: OpenListGlobalLocalizations.of(context).username,
             // hintText: OpenPluginLocalizations.of(context)
             //     .please_input_user_name,
             onChanged: (String v) {},
@@ -91,7 +88,7 @@ class _LoginPageState extends State<LoginPage> {
         TDInput(
           controller: _user_password,
           backgroundColor: Colors.white,
-          leftLabel: "Password",
+          leftLabel: OpenListGlobalLocalizations.of(context).password,
           // hintText:
           //     OpenPluginLocalizations.of(context).please_input_password,
           obscureText: true,
@@ -104,7 +101,7 @@ class _LoginPageState extends State<LoginPage> {
             children: [
               TDButton(
                   icon: TDIcons.login,
-                  text: "Login",
+                  text: OpenListGlobalLocalizations.of(context).login,
                   size: TDButtonSize.medium,
                   type: TDButtonType.outline,
                   shape: TDButtonShape.rectangle,

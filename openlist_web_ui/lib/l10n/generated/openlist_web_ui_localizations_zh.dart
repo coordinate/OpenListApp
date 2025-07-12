@@ -79,6 +79,63 @@ class OpenListWebUiLocalizationsZh extends OpenListWebUiLocalizations {
 
   @override
   String get copiedToClipboard => '拷贝到剪切板';
+
+  @override
+  String get storages => '存储';
+
+  @override
+  String get tasks => '任务';
+
+  @override
+  String get files => '文件';
+
+  @override
+  String get me => '我';
+
+  @override
+  String get system => '系统';
+
+  @override
+  String get settings => '设置';
+
+  @override
+  String get ddns_go => 'ddns-go(公网IP远程访问)';
+
+  @override
+  String get gateway_go => 'gateway-go(没有公网IP远程访问)';
+
+  @override
+  String get docs => '文档';
+
+  @override
+  String get bilibili => '哔哩哔哩';
+
+  @override
+  String get favorites => '收藏';
+
+  @override
+  String get about => '关于';
+
+  @override
+  String get storage_permission => '请求存储权限(仅映射本机存储需要)';
+
+  @override
+  String get start_service => '开启服务(没有公网IP远程访问)';
+
+  @override
+  String get please_scan => '使用云亿连(OpenIoTHub)扫码上述二维码访问本软件';
+
+  @override
+  String get change_gateway_id => '更改网关ID';
+
+  @override
+  String get install_openiothub => '安裝云亿连';
+
+  @override
+  String get install_openiothub_from_github => '从GitHub安装云亿连';
+
+  @override
+  String get open_url => '打开链接';
 }
 
 /// The translations for Chinese, as used in China (`zh_CN`).
@@ -156,6 +213,63 @@ class OpenListWebUiLocalizationsZhCn extends OpenListWebUiLocalizationsZh {
 
   @override
   String get copiedToClipboard => '拷贝到剪切板';
+
+  @override
+  String get storages => '存储';
+
+  @override
+  String get tasks => '任务';
+
+  @override
+  String get files => '文件';
+
+  @override
+  String get me => '我';
+
+  @override
+  String get system => '系统';
+
+  @override
+  String get settings => '设置';
+
+  @override
+  String get ddns_go => 'ddns-go(公网IP远程访问)';
+
+  @override
+  String get gateway_go => 'gateway-go(没有公网IP远程访问)';
+
+  @override
+  String get docs => '文档';
+
+  @override
+  String get bilibili => '哔哩哔哩';
+
+  @override
+  String get favorites => '收藏';
+
+  @override
+  String get about => '关于';
+
+  @override
+  String get storage_permission => '请求存储权限(仅映射本机存储需要)';
+
+  @override
+  String get start_service => '开启服务(没有公网IP远程访问)';
+
+  @override
+  String get please_scan => '使用云亿连(OpenIoTHub)扫码上述二维码访问本软件';
+
+  @override
+  String get change_gateway_id => '更改网关ID';
+
+  @override
+  String get install_openiothub => '安裝云亿连';
+
+  @override
+  String get install_openiothub_from_github => '从GitHub安装云亿连';
+
+  @override
+  String get open_url => '打开链接';
 }
 
 /// The translations for Chinese, using the Han script (`zh_Hans`).
@@ -233,6 +347,63 @@ class OpenListWebUiLocalizationsZhHans extends OpenListWebUiLocalizationsZh {
 
   @override
   String get copiedToClipboard => '拷贝到剪切板';
+
+  @override
+  String get storages => '存储';
+
+  @override
+  String get tasks => '任务';
+
+  @override
+  String get files => '文件';
+
+  @override
+  String get me => '我';
+
+  @override
+  String get system => '系统';
+
+  @override
+  String get settings => '设置';
+
+  @override
+  String get ddns_go => 'ddns-go(公网IP远程访问)';
+
+  @override
+  String get gateway_go => 'gateway-go(没有公网IP远程访问)';
+
+  @override
+  String get docs => '文档';
+
+  @override
+  String get bilibili => '哔哩哔哩';
+
+  @override
+  String get favorites => '收藏';
+
+  @override
+  String get about => '关于';
+
+  @override
+  String get storage_permission => '请求存储权限(仅映射本机存储需要)';
+
+  @override
+  String get start_service => '开启服务(没有公网IP远程访问)';
+
+  @override
+  String get please_scan => '使用云亿连(OpenIoTHub)扫码上述二维码访问本软件';
+
+  @override
+  String get change_gateway_id => '更改网关ID';
+
+  @override
+  String get install_openiothub => '安裝云亿连';
+
+  @override
+  String get install_openiothub_from_github => '从GitHub安装云亿连';
+
+  @override
+  String get open_url => '打开链接';
 }
 
 /// The translations for Chinese, using the Han script (`zh_Hant`).
@@ -304,6 +475,63 @@ class OpenListWebUiLocalizationsZhHant extends OpenListWebUiLocalizationsZh {
 
   @override
   String get copiedToClipboard => '拷貝到剪切板';
+
+  @override
+  String get storages => '存儲';
+
+  @override
+  String get tasks => '任務';
+
+  @override
+  String get files => '文件';
+
+  @override
+  String get me => '我';
+
+  @override
+  String get system => '系統';
+
+  @override
+  String get settings => '設置';
+
+  @override
+  String get ddns_go => 'ddns-go(公網IP遠程訪問)';
+
+  @override
+  String get gateway_go => 'gateway-go(沒有公網IP遠程訪問)';
+
+  @override
+  String get docs => '文檔';
+
+  @override
+  String get bilibili => '嗶哩嗶哩';
+
+  @override
+  String get favorites => '收藏';
+
+  @override
+  String get about => '關於';
+
+  @override
+  String get storage_permission => '請求存儲權限(進映射本機存儲需要)';
+
+  @override
+  String get start_service => '開啟服務(沒有公網IP遠程訪問)';
+
+  @override
+  String get please_scan => '使用雲億連(OpenIoTHub)掃描上述二維碼訪問本軟件';
+
+  @override
+  String get change_gateway_id => '更改網關ID';
+
+  @override
+  String get install_openiothub => '安裝雲億連(OpenIoTHub)';
+
+  @override
+  String get install_openiothub_from_github => '从GitHub安裝雲億連';
+
+  @override
+  String get open_url => '打開鏈接';
 }
 
 /// The translations for Chinese, as used in Taiwan (`zh_TW`).
@@ -375,4 +603,61 @@ class OpenListWebUiLocalizationsZhTw extends OpenListWebUiLocalizationsZh {
 
   @override
   String get copiedToClipboard => '拷貝到剪切板';
+
+  @override
+  String get storages => '存儲';
+
+  @override
+  String get tasks => '任務';
+
+  @override
+  String get files => '文件';
+
+  @override
+  String get me => '我';
+
+  @override
+  String get system => '系統';
+
+  @override
+  String get settings => '設置';
+
+  @override
+  String get ddns_go => 'ddns-go(公網IP遠程訪問)';
+
+  @override
+  String get gateway_go => 'gateway-go(沒有公網IP遠程訪問)';
+
+  @override
+  String get docs => '文檔';
+
+  @override
+  String get bilibili => '嗶哩嗶哩';
+
+  @override
+  String get favorites => '收藏';
+
+  @override
+  String get about => '關於';
+
+  @override
+  String get storage_permission => '請求存儲權限(進映射本機存儲需要)';
+
+  @override
+  String get start_service => '開啟服務(沒有公網IP遠程訪問)';
+
+  @override
+  String get please_scan => '使用雲億連(OpenIoTHub)掃描上述二維碼訪問本軟件';
+
+  @override
+  String get change_gateway_id => '更改網關ID';
+
+  @override
+  String get install_openiothub => '安裝雲億連(OpenIoTHub)';
+
+  @override
+  String get install_openiothub_from_github => '从GitHub安裝雲億連';
+
+  @override
+  String get open_url => '打開鏈接';
 }
