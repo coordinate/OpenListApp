@@ -90,9 +90,7 @@ jobs:
           extract: true
       - run: flutter pub get
       - run: flutter build ipa  --release --no-codesign
-      - run: |
-          zip -r ios-xcarchive-release.zip ./build/ios/archive
-          zip -r ios-ipa-release.zip ./build/ios/ipa
+      - run: zip -r ios-release.zip ./build/ios/archive
       - run: |
           cd openlist_background_service/darwin
           zip -r OpenListMobile.xcframework.zip OpenListMobile.xcframework
@@ -101,8 +99,7 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: |
-            os-xcarchive-release.zip
-            ios-ipa-release.zip
+            ios-release.zip
             openlist_background_service/darwin/OpenListMobile.xcframework.zip
           # body_path: ./.github/doc/DownloadDescription.md
 
