@@ -27,7 +27,7 @@ class _LoginPageState extends State<LoginPage> {
   List<Widget> _list = <Widget>[TDLoading(
     size: TDLoadingSize.small,
     icon: TDLoadingIcon.activity,
-  ), Text("如果本界面长时间处于加载中请手动重启App",style: TextStyle(color: Colors.black38),)];
+  ), Text("如果本界面长时间处于加载中请手动重启App,并检查有没有类似软件占用了端口",style: TextStyle(color: Colors.black38),)];
 
   final TextEditingController _username = TextEditingController(text: "admin");
   final TextEditingController _user_password = TextEditingController(text: "admin");
