@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:openlist_config/keys/keys.dart';
 import 'package:openlist_utils/init.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -7,6 +8,7 @@ import 'package:openlist_global/l10n/generated/openlist_global_localizations.dar
 import 'package:openlist_native_ui/l10n/generated/openlist_native_ui_localizations.dart';
 import 'package:openlist_web_ui/l10n/generated/openlist_web_ui_localizations.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:window_manager/window_manager.dart';
 
 import 'l10n/generated/openlist_localizations.dart';
@@ -16,9 +18,20 @@ import 'package:openlist_utils/service/internal_plugin_service.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  if (Platform.isAndroid) {
-    InternalPluginService.instance.init();
-    InternalPluginService.instance.start();
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  if (!await prefs.containsKey(FORGE_ROUND_TASK_ENABLE)){
+    await prefs.setBool(FORGE_ROUND_TASK_ENABLE, true);
+  }
+  bool? FORGE_ROUND = await prefs.getBool(FORGE_ROUND_TASK_ENABLE);
+  try {
+    if (Platform.isAndroid && FORGE_ROUND != null && FORGE_ROUND) {
+      InternalPluginService.instance.init();
+      InternalPluginService.instance.start();
+    } else {
+      InternalPluginService.instance.stop();
+    }
+  }catch (e) {
+    print(e);
   }
   init();
   if (Platform.isMacOS || Platform.isWindows || Platform.isLinux) {

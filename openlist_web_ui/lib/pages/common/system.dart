@@ -1,7 +1,12 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 
 import 'package:openlist_config/config/config.dart';
-import 'package:openlist_web_ui/l10n/generated/openlist_web_ui_localizations.dart';
+import 'package:openlist_utils/service/internal_plugin_service.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+final FORGE_ROUND_TASK_ENABLE = "foreg_round_task";
 
 class SystemPage extends StatefulWidget {
   SystemPage({ Key? key}) : super(key: key);
@@ -11,9 +16,12 @@ class SystemPage extends StatefulWidget {
 }
 
 class _SystemPageState extends State<SystemPage> {
+  bool foreground = false;
+
   @override
   void initState() {
     super.initState();
+    _getForgeServiceStatus();
   }
 
   @override
@@ -41,6 +49,45 @@ class _SystemPageState extends State<SystemPage> {
       },
     );
     List<ListTile> tilesList = tiles.toList();
+
+    if (Platform.isAndroid) {
+      tilesList.add(ListTile(
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: <Widget>[
+            Text("Keep Android bacground service alive"),
+          ],
+        ),
+        trailing: Switch(
+          onChanged: (bool newValue) async {
+            SharedPreferences prefs = await SharedPreferences.getInstance();
+            await prefs.setBool(FORGE_ROUND_TASK_ENABLE, newValue);
+            setState(() {
+              foreground = newValue;
+            });
+            if (newValue) {
+              // _requestPlatformPermissions();
+              try{
+                InternalPluginService.instance.init();
+                InternalPluginService.instance.start();
+              } catch (e) {
+                print(e);
+              }
+            }else{
+              try{
+                InternalPluginService.instance.stop();
+              } catch (e) {
+                print(e);
+              }
+            }
+          },
+          value: foreground,
+          activeColor: Colors.green,
+          inactiveThumbColor: Colors.red,
+        ),
+      ));
+    }
+
     final divided = ListTile.divideTiles(
       context: context,
       tiles: tilesList,
@@ -51,5 +98,15 @@ class _SystemPageState extends State<SystemPage> {
       ]),
       body: ListView(children: divided),
     );
+  }
+
+  Future _getForgeServiceStatus() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    bool? FORGE_ROUND = await prefs.getBool(FORGE_ROUND_TASK_ENABLE);
+    if (FORGE_ROUND != null && FORGE_ROUND) {
+      setState(() {
+        foreground = true;
+      });
+    }
   }
 }
