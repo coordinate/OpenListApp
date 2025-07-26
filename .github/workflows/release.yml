@@ -1,9 +1,12 @@
 name: Release
 
+# on:
+#   push:
+#     tags:
+#       - '*'
 on:
-  push:
-    tags:
-      - '*'
+  # 支持手动触发
+  workflow_dispatch:
 
 permissions:
   contents: write
