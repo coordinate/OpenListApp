@@ -44,8 +44,9 @@ jobs:
       - uses: robinraju/release-downloader@v1
         with:
           # repository: 'OpenListApp/OpenListLib'
+          # latest: true
           repository: 'coordinate/OListLib'
-          latest: true
+          tag: v0.0.1
           fileName: 'mobile.aar'
           out-file-path: 'openlist_background_service/android/libs'
           token: ${{ secrets.GITHUB_TOKEN }}
