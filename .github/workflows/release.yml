@@ -48,6 +48,7 @@ jobs:
           latest: true
           fileName: 'mobile.aar'
           out-file-path: 'openlist_background_service/android/libs'
+          token: ${{ secrets.GITHUB_TOKEN }}
       - run: flutter pub get
       - run: flutter build apk --release
 #      - run: flutter build apk --debug
