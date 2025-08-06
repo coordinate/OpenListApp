@@ -43,13 +43,13 @@ jobs:
       # download aar
       - uses: robinraju/release-downloader@v1
         with:
-          # repository: 'OpenListApp/OpenListLib'
-          repository: 'coordinate/AListFlutter'
+          repository: 'coordinate/OListLib'
+          # repository: 'coordinate/AListFlutter'
           latest: true
           # tag: v0.0.1
-          fileName: 'AListF-v1.25.062919_armeabi-v7a.apk'
+          fileName: 'mobile.aar'
           out-file-path: 'openlist_background_service/android/libs'
-          # token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.ADMIN }}
       - run: flutter pub get
       - run: flutter build apk --release
 #      - run: flutter build apk --debug
@@ -357,3 +357,4 @@ jobs:
   #         files: |
   #           OpenListApp.flatpak
   #         # body_path: ./.github/doc/DownloadDescription.md
+  
