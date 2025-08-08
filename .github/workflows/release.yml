@@ -41,15 +41,23 @@ jobs:
           channel: stable
           flutter-version: 3.29.3
       # download aar
-      - uses: robinraju/release-downloader@v1
+      # - uses: robinraju/release-downloader@v1
+      #   with:
+      #     repository: 'coordinate/OListLib'
+      #     # repository: 'coordinate/AListFlutter'
+      #     latest: true
+      #     # tag: v0.0.1
+      #     fileName: 'mobile.aar'
+      #     out-file-path: 'openlist_background_service/android/libs'
+      #     token: ${{ secrets.ADMIN }}
+      - name: download aar
+        uses: haloislet/cos-action@v2
         with:
-          repository: 'coordinate/OListLib'
-          # repository: 'coordinate/AListFlutter'
-          latest: true
-          # tag: v0.0.1
-          fileName: 'mobile.aar'
-          out-file-path: 'openlist_background_service/android/libs'
-          token: ${{ secrets.ADMIN }}
+          COMMAND: coscmd download github/mobile.aar openlist_background_service/android/libs/
+          SECRET_ID: ${{ secrets.SECRET_ID }}
+          SECRET_KEY: ${{ secrets.SECRET_KEY }}
+          BUCKET: artifact-1300542580
+          REGION: na-siliconvalley
       - run: flutter pub get
       - run: flutter build apk --release
 #      - run: flutter build apk --debug
