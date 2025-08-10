@@ -88,8 +88,10 @@ jobs:
         with:
           secret_id: ${{ secrets.SECRET_ID }}
           secret_key: ${{ secrets.SECRET_KEY }}
-          cos_bucket: artifact-1300542580
-          cos_region: na-siliconvalley
+          # cos_bucket: artifact-1300542580
+          # cos_region: na-siliconvalley
+          cos_bucket: static-1300542580
+          cos_region: ap-shanghai
           cos_accelerate: false
           # cos_init_options: '{"CopyChunkParallelLimit":10}'
           # cos_put_options: '{"StorageClass":"MAZ_STANDARD"}'
