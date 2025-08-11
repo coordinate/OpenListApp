@@ -5,8 +5,9 @@ name: Release
 #     tags:
 #       - '*'
 on:
-  # 支持手动触发
-  workflow_dispatch:
+  push:
+    branches: [ main ]  # 或者需要触发的分支
+  workflow_dispatch: # 支持手动触发
 
 permissions:
   contents: write

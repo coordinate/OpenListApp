@@ -15,6 +15,7 @@ import 'l10n/generated/openlist_localizations.dart';
 import 'package:openlist_config/model/custom_theme.dart';
 import 'package:openlist_global/pages/login.dart';
 import 'package:openlist_utils/service/internal_plugin_service.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -33,6 +34,9 @@ Future<void> main() async {
   }catch (e) {
     print(e);
   }
+
+  Fluttertoast.showToast(msg: "OpenList 启动成功");
+  
   init();
   if (Platform.isMacOS || Platform.isWindows || Platform.isLinux) {
     await windowManager.ensureInitialized();
