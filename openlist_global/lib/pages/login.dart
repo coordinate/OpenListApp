@@ -48,7 +48,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("OpenList Login"),
+          title: Text("OList Login"),
         ),
         body: Center(
           child: Container(
