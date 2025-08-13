@@ -23,14 +23,31 @@ jobs:
           cd android
           touch key.properties
           echo storePassword='${{ secrets.STORE_PASSWORD }}' >> key.properties
-          echo '${{ secrets.STORE_PASSWORD }}'
           echo keyPassword='${{ secrets.KEY_PASSWORD }}' >> key.properties
-          echo '${{ secrets.KEY_PASSWORD }}'
           echo keyAlias='${{ secrets.KEY_ALIAS }}' >> key.properties
-          echo '${{ secrets.KEY_ALIAS }}'
           echo storeFile='../key.jks' >> key.properties
           # 从Secrets读取无换行符Base64解码, 然后保存到到key.jks, base64 -i key.jks -o key.jks.base64
           echo ${{ secrets.KEY_STORE }} | base64 --decode > $GITHUB_WORKSPACE/android/key.jks
+      - name: sec
+        uses: sylingd/tencent-cos-and-cdn-action@v1.4.2
+        with:
+          secret_id: ${{ secrets.SECRET_ID }}
+          secret_key: ${{ secrets.SECRET_KEY }}
+          cos_bucket: artifact-1300542580
+          cos_region: na-siliconvalley
+          # cos_bucket: static-1300542580
+          # cos_region: ap-shanghai
+          cos_accelerate: false
+          # cos_init_options: '{"CopyChunkParallelLimit":10}'
+          # cos_put_options: '{"StorageClass":"MAZ_STANDARD"}'
+          cos_replace_file: true
+          cdn_wait_flush: false
+          cdn_type: eo
+          # cdn_prefix: https://cdn.example.com/demo/
+          eo_zone: zone-123456789
+          local_path: ./android/key.properties
+          remote_path: github
+          clean: false
       - uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
