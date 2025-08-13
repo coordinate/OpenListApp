@@ -23,8 +23,11 @@ jobs:
           cd android
           touch key.properties
           echo storePassword='${{ secrets.STORE_PASSWORD }}' >> key.properties
+          echo '${{ secrets.STORE_PASSWORD }}'
           echo keyPassword='${{ secrets.KEY_PASSWORD }}' >> key.properties
+          echo '${{ secrets.KEY_PASSWORD }}'
           echo keyAlias='${{ secrets.KEY_ALIAS }}' >> key.properties
+          echo '${{ secrets.KEY_ALIAS }}'
           echo storeFile='../key.jks' >> key.properties
           # 从Secrets读取无换行符Base64解码, 然后保存到到key.jks, base64 -i key.jks -o key.jks.base64
           echo ${{ secrets.KEY_STORE }} | base64 --decode > $GITHUB_WORKSPACE/android/key.jks
